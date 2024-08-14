@@ -151,6 +151,11 @@ table tr td {
     padding: 10px 16px;
 }
 
+.notborder {
+    border: none;
+    padding-bottom: 0;
+}
+
 /*--------------- FOOTER  ---------------*/
 
 footer {
