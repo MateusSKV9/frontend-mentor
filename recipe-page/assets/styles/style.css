@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --White: hsl(0, 0%, 100%);
+
+    --Stone-100: hsl(30, 54%, 90%);
+    --Stone-150: hsl(30, 18%, 87%);
+    --Stone-600: hsl(30, 10%, 34%);
+    --Stone-900: hsl(24, 5%, 18%);
+
+    --Brown-800: hsl(14, 45%, 36%);
+
+    --Rose-800: hsl(332, 51%, 32%);
+    --Rose-50: hsl(330, 100%, 98%);
+}
+
+body {
+    background-color: var(--Stone-100);
+    font-family: 'Outfit';
+    color: var(--Stone-600);
+}
+
+h1, h2 {
+    font-family: 'Young Serif', sans-serif;
+    font-weight: normal; 
+}
+
+h1 {
+    color: var(--Stone-900);
+}
+
+h2 {
+    color: var(--Brown-800);
+}
+
+p {
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+li {
+    margin: 10px;
+}
+
+/*--------------- MAIN  ---------------*/
+
+main {
+    background-color: var(--White);
+    width: 50%;
+    max-width: 1440px;
+    margin: 5% auto;
+    border-radius: 20px;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+main section {
+    width: 100%;
+}
+
+/*--------------- RECIPE INTRODUCE  ---------------*/
+
+#recipe-introduce h1 {
+    font-size: 2em;
+}
+
+#recipe-image {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 0px;
+}
+
+#recipe-image img {
+    width: 100%;
+}
+
+#preparation {
+    background-color: var(--Rose-50);
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#preparation h3 {
+    color: var(--Rose-800);
+}
+
+#preparation ul li::marker {
+    color: var(--Rose-800);
+}
+
+/*--------------- OTHERS SECTIONS  ---------------*/
+
+#ingredients, #instructions {
+    border-bottom: 1px solid var(--Stone-150);
+    padding-bottom: 20px;
+}
+
+
+#ingredients ul li::marker {
+    color: var(--Brown-800);
+}
+
+#instructions ol li::marker {
+    color: var(--Brown-800);
+    font-weight: bold;
+    margin-right: 10px;
+    padding-right: 10px;
+}
+
+ol strong, table strong {
+    color: var(--Brown-800);
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+}
+
+ol strong {
+    margin-left: 8px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr td {
+    border-bottom: 1px solid var(--Stone-150);
+    padding: 10px 16px;
+}
+
+/*--------------- FOOTER  ---------------*/
+
+footer {
+    background-color: black;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+footer a {
+    color: hsl(202, 45%, 44%); 
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+footer a:before {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    background-color: hsl(202, 45%, 44%);
+    height: 2px;
+    transition: .5s ease;
+}
+
+footer a:hover:before {
+    width: 50%;
+}
+
+footer a::after {
+    content: '';
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    background-color: hsl(202, 45%, 44%);
+    height: 2px;
+    transition: .5s ease;
+}
+
+footer a:hover:after {
+    width: 50%;
+}

@@ -1,0 +1,28 @@
+@media screen and (max-width: 375px) {
+    main {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    #recipe-image {
+        width: 100vw;
+        margin: -30px;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 600px) {
+    main {
+        width: 80%;
+    }
+}
