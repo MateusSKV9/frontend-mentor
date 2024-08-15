@@ -190,6 +190,7 @@ footer a:before {
 
 footer a:hover:before {
     width: 50%;
+    height: 1px;
 }
 
 footer a::after {
@@ -205,4 +206,5 @@ footer a::after {
 
 footer a:hover:after {
     width: 50%;
+    height: 1px;
 }
