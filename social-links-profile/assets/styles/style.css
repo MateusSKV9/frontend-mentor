@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -19,6 +21,7 @@
 html,
 body {
   background-color: var(--grey-900);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 body {
