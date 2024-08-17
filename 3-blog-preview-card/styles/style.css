@@ -48,6 +48,7 @@ main {
 
     border-radius: 20px;
     padding: 20px;
+    padding-bottom: 10px;
     box-shadow: 8px 8px 1px 0px var(--gray-950);
     border: 1px solid black;
 }
