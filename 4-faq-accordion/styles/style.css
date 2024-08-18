@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --white: hsl(0, 0%, 100%);
     --light-pink: hsl(275, 100%, 97%);
@@ -10,6 +16,134 @@
 }
 
 body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px 0 20px;
     font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+    background-color: var(--light-pink);
+    position: relative;
 }
 
+#background {
+    background: url(../assets/images/background-pattern-desktop.svg) no-repeat center center/cover;
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+body * {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 0.9em;
+    color: var(--grayish-purple);
+}
+
+h1, h3 {
+    color: var(--dark-purple);
+}
+
+main {
+    max-width: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+
+    background-color: var(--white);
+    border-radius: 15px;
+}
+
+#section-faqs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+#section-faqs h1 {
+    font-size: 2em;
+}
+
+.asks:not(:last-of-type) {
+    border-bottom: 1px solid var(--light-pink);
+    padding-bottom: 20px;
+}
+
+.ask-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.ask-item h3 {
+    transition: all .3s ease;
+}
+
+.ask-item h3:hover {
+    color: rgb(180, 0, 229);
+    cursor: pointer;
+}
+
+.oculta {
+    display: none;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+footer {
+   background-color: var(--dark-purple);
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: calc(100% + 40px);
+   margin-top: 40px;
+   padding: 10px;
+   font-size: 1em;
+   margin: 50px 0px 0px 0px;
+}
+
+footer p {
+    color: var(--grayish-purple);
+}
+
+footer a {
+    text-decoration: none;
+    color: whitesmoke;
+    position: relative;
+    font-size: 1em;
+}
+
+footer a:hover {
+    color: var(--light-pink);
+}
+
+footer a::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: var(--light-pink);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all .3s ease;
+}
+
+footer a:hover::before {
+    width: 100%;
+}

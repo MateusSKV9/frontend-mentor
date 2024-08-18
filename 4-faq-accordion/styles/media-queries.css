@@ -1,0 +1,5 @@
+@media screen and (max-width: 375px) {
+    body {
+        background: var(--light-pink) url(../assets/images/background-pattern-mobile.svg) no-repeat top center/cover;
+    }
+}
