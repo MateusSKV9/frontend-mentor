@@ -13,6 +13,7 @@
         align-items: center;
         margin: 0;
         border-radius: 0px 0px 20px 20px;
+        box-shadow: none;
     }
 
     main #section-left, #section-right {
@@ -21,14 +22,28 @@
 
     #section-left {
         border-radius: 0px 0px 20px 20px;
+        padding-top: 100px;
     }
 
     #section-right {
-        padding-bottom: 20px;
+        padding-bottom: 60px;
     }
 
     footer {
         margin-top: 80px;
         width: 100%;
+    }
+}
+
+@media screen and (max-height: 650px) {
+    main {
+        box-shadow: none;
+    }
+
+}
+
+@media screen and (max-height: 670px) {
+    main {
+        box-shadow: none;
     }
 }
