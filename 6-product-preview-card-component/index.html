@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/media-queries.css">
   <title>Frontend Mentor | Product preview card component</title>
   <!-- <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -13,27 +14,28 @@
 </head>
 <body>
   <main>
-    <section id="section-image">
-      <img src="images/image-product-desktop.jpg" alt="image-product-desktop">
-    </section>
-
+    <section id="section-image"></section>
+    
     <section id="section-content">
-      <h3>Perfume</h3>
+      <h6>Perfume</h3>
       <h1>Gabrielle Essence Eau De Parfum</h1>
-      <p>
+      <p id="description">
         A floral, solar and voluptuous interpretation composed by Olivier Polge, 
         Perfumer-Creator for the House of CHANEL.
       </p>
       <section id="price">
         <h1>$149.99</h1>
-        <p>$169.99</p>
+        <p><del>$169.99</del></p>
       </section>
-      <a href="#">Add to Cart</a>
+      <a href="#">
+        <img src="images/icon-cart.svg" alt="">
+        <span>Add to Cart</span></a>
     </section>
-  </main>    
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>. -->
-  </div>
+  </main> 
+
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a></p>
+    <p>Coded by <a href="#">Mateus Santos</a></p>
+  </footer>
 </body>
 </html>
