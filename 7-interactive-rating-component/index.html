@@ -6,42 +6,34 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Interactive rating component</title>
   <link rel="stylesheet" href="styles/style.css">
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main>
-    <section id="img;"><img src="images/icon-star.svg" alt="icon-star"></section>
+    <section id="img"><img src="images/icon-star.svg" alt="icon-star"></section>
     <h2>How did we do?</h2>
     <p>
       Please let us know how we did with your support request. All feedback is appreciated 
       to help us improve our offering!
     </p>
-    <section id="section-numbers">
-      <p>1</p>
-      <p>2</p>
-      <p>3</p>
-      <p>4</p>
-      <p>5</p>
-    </section>
-    <a href="#">Submit</a>
+    <form id="section-numbers">
+      <p class="number"><span>1</span></p>
+      <p class="number"><span>2</span></p>
+      <p class="number"><span>3</span></p>
+      <p class="number"><span>4</span></p>
+      <p class="number"><span>5</span></p>
+    </form>
+    <a href="page-submit.html" id="btnSubmit"><span>Submit</span></a>
   </main>
 
-  <!-- You selected (Add rating here) out of 5
+  <footer>
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
+    </p>
+    <p>
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
 
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <script src="js/index.js"></script>
 </body>
 </html>
