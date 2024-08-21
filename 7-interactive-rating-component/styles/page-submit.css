@@ -1,0 +1,16 @@
+main {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+#mensage {
+    color: var(--orange);
+    background-color: var(--very-Dark-Blue);
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-align: center;
+
+}
