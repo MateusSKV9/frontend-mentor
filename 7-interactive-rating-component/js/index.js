@@ -16,7 +16,9 @@ submit.addEventListener('click', function() {
     let marked = document.querySelector('.number.marked');
     if(marked) {
         localStorage.setItem('number', marked.textContent);
+        submit.href = 'page-submit.html';
     } else {
         alert('Por favor, selecione um número');
+        return;
     }
 })
