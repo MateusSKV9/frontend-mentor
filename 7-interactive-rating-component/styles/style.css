@@ -7,6 +7,7 @@
 
   --white: hsl(0, 0%, 100%);
   --light-Grey: hsl(217, 12%, 63%);
+  --light-Grey2: hsla(220, 5%, 26%, 0.595);
   --dark-Blue: hsl(213, 19%, 18%);
   --very-Dark-Blue: hsl(216, 12%, 8%);
 }
@@ -25,11 +26,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-p { 
-    font-size: 15px;
+main p { 
+    font-size: 14px;
 }
 
 main {
@@ -39,21 +40,29 @@ main {
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    margin-top: 10%;
+}
+
+main h2  {
+    color: white;
 }
 
 #img {
-    width: 25px;
-    height: 25px;
+    background-color: var(--light-Grey2);
+    width: 30px;
+    height: 30px;
+    padding: 5px;
     border-radius: 50%;
-    background-color: var(--very-Dark-Blue);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 #img img {
     width: 12px;
+    height: 12px;
 }
 
 #section-numbers {
@@ -64,20 +73,89 @@ main {
 }
 
 #section-numbers p {
-    background-color: var(--very-Dark-Blue);
+    background-color: var(--light-Grey2);
     width: 40px;
     height: 40px;
     padding: 10px;
     text-align: center;
     border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+}
+
+#section-numbers p:hover {
+    background-color: var(--orange);
+    color: var(--very-Dark-Blue);
+    cursor: pointer;
 }
 
 main a {
     text-decoration: none;
     color: white;
+    color: var(--very-Dark-Blue);
     width: 100%;
     background-color: var(--orange);
     text-align: center;
     border-radius: 20px;
-    padding: 5px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    transition: background .2s ease;
 }
+
+main a:hover {
+    background-color: var(--white);
+}
+
+.number.marked {
+    background-color: white !important;
+    color: var(--very-Dark-Blue);
+}
+
+footer {
+    background-color: var(--dark-Blue);
+    padding: 8px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+    color: white;
+    font-size: 0.85em;
+}
+
+footer a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+footer a:hover {
+    color: var(--white);
+}
+
+footer a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: var(--orange);
+    height: 2px;
+    transition: all .3s ease;
+}
+
+footer a:hover::before {
+    width: 100%;
+}   
