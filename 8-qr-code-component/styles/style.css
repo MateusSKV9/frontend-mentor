@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+
+    --slate-300: hsl(212, 45%, 89%);
+    --slate-500: hsl(216, 15%, 48%);
+    --slate-900: hsl(218, 44%, 22%); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--slate-300);
+    font-family: "Outfit", Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    background-color: var(--white);
+    max-width: 280px;
+    width: 100%;
+    margin: 5% 0px 20px;
+    padding: 10px 10px 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+section#image {
+    width: 100%;
+    overflow: hidden;
+}
+
+section#image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+section#content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+#content h3 {
+    color: var(--slate-900);
+}
+
+#content p {
+    color: var(--slate-500);
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: var(--slate-900);
+    width: 100%;
+    padding: 7px;
+    text-align: center;
+    color: var(--slate-500);
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    position: relative;
+}
+
+
+footer a::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all .3s ease;
+    background-color: var(--white);
+}
+
+footer a:hover::before {
+    width: 50%;
+}
+
+footer a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all .3s ease;
+    background-color: var(--white);
+}
+
+footer a:hover::after {
+    width: 50%;
+}
