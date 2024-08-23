@@ -3,6 +3,7 @@
 :root {
   --soft-blue: hsl(215, 51%, 70%);
   --cyan: hsl(178, 100%, 50%);
+  --cyan-transparent: hsla(178, 100%, 50%, 0.4);
 
   --very-dark-blue-body: hsl(217, 54%, 11%);
   --very-dark-blue-card: hsl(216, 50%, 16%);
@@ -20,10 +21,19 @@ body {
     background-color: var(--very-dark-blue-body);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     min-height: 100vh;
+    font-family: 'Outfit';
+}
+
+p {
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
 }
 
 main {
@@ -34,20 +44,125 @@ main {
     flex-direction: column;   
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    gap: 15px;
+    padding: 20px 20px 25px;
+    margin: 5% 0px;
     box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
+    color: var(--soft-blue);
 }
 
 #image {
     width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 #image img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+#image a::before {
+    content: '';
+    transition: all .25s ease;
+}
+
+#image a:hover::before {
+    position: absolute;
+    height: 99%;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--cyan-transparent) url(../images/icon-view.svg) no-repeat;
+    background-position: center center;
+    background-blend-mode: color;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+#content h3 {
+    color: var(--white);
+    font-weight: 600;
+    transition: color .25s ease;
+}
+
+#content h3:hover {
+    color: var(--cyan);
+}
+
+#data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--soft-blue);
+    padding-bottom: 15px;
+}
+
+#data * {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#data-item-1 {
+    color: var(--cyan);
+}
+
+#data-item-2 {
+    font-size: 0.9em;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 #user img {
+    border: 1px solid var(--white);
+    border-radius: 50%;
     width: 30px;
+}
+
+#user a {
+    color: var(--white);
+    transition: all .2s ease;
+}
+ 
+#user a:hover {
+    color: var(--cyan);
+}
+
+footer {
+    background-color: #1c3454;
+    width: 100%;
+    text-align: center;
+    padding: 3px;
+    color: var(--soft-blue);
+}
+
+footer a {
+    color: var(--white);
+    position: relative;
+}
+
+footer a::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: all .2s ease;
+    background-color: var(--white);
+}
+
+footer a:hover::before {
+    width: 100%;
 }
