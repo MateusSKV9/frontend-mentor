@@ -2,7 +2,9 @@
 
 :root {
   --pale-blue: hsl(225, 100%, 94%);
+  --pale-blue-transparent: hsla(222, 25%, 90%, 0.3);
   --bright-blue: hsl(245, 75%, 52%);
+  --bright-blue-transparent: hsl(245, 75%, 52%, 0.75);
 
   --very-pale-blue: hsl(225, 100%, 98%);
   --desaturated-blue: hsl(224, 23%, 55%);
@@ -17,5 +19,163 @@
 
 body {
     background-color: var(--pale-blue);
+    width: 100%;
+    padding: 10px 10px 0px;
+    min-height: 100vh;
     font-family: 'Red Hat Display', Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    background-color: var(--very-pale-blue);
+    max-width: 350px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 2px 2px 20px 2px rgba(64, 52, 175, 0.1);
+    margin: 5%;
+}
+
+p {
+    font-size: 0.95em;
+}
+
+#image {
+    width: 100%;
+}
+
+#image img {
+    width: 100%;
+}
+
+#content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+#content h1 {
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+#content p {
+    color: var(--desaturated-blue);
+}
+
+#plan {
+    background-color: var(--pale-blue-transparent);
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 1em;
+}
+
+#change {
+    color: var(--bright-blue);
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+#change:hover {
+    text-decoration: none;
+    color: var(--bright-blue-transparent);
+}
+
+#plan-data {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+#plan-data img {
+    width: 40px;
+}
+
+#plan-description p {
+    font-size: 0.9em;
+}
+
+#plan-description p:nth-of-type(2) {
+    font-weight: 500;
+}
+
+
+strong {
+    color: var(--dark-blue);
+}
+
+#pay {
+    width: 100%;
+    background-color: var(--bright-blue);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+    box-shadow: 0px 7px 20px 1px rgba(83, 71, 190, 0.284);
+    margin: 5px 0px;
+    transition: background .2s ease;
+}
+
+#pay:hover {
+    background-color: var(--bright-blue-transparent);
+}
+
+#cancel {
+    color: var(--desaturated-blue);
+    font-weight: bold;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: color .2s ease;
+    margin: 2px 0px;
+}
+
+#cancel:hover {
+    color: var(--dark-blue);
+}
+
+footer {
+    background-color: var(--bright-blue);
+    width: calc(100% + 20px);
+    color: white;
+    text-align: center;
+    font-size: 0.9em;
+    padding: 4px;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+footer a::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all .2s ease;
+    background-color: white;
+}
+
+footer a:hover::before {
+    width: 100%;
 }
