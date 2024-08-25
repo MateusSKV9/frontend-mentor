@@ -22,6 +22,10 @@
         padding: 35px;
     }
 
+    #stats-container {
+        margin-top: 5px;
+    }
+
     footer {
         width: calc(100% + 40px);
         flex-direction: column;
@@ -29,15 +33,10 @@
 }
 
 @media screen and (max-width: 375px) {
-    #image {
-        min-height: 30%;
-    }
-    
     #content {
         text-align: center;
-        height: 70%;
         padding: 30px 20px 20px;
-        font-size: 0.8em;
+        font-size: 1em;
     }
     
     #stats-container {
