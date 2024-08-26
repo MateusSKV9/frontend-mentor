@@ -1,0 +1,16 @@
+@media screen and (max-width: 690px) {
+    main {
+        max-width: 300px;
+        flex-direction: column;
+    }
+
+    .cars {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .cars a {
+        margin-top: 20px;
+    }
+}
