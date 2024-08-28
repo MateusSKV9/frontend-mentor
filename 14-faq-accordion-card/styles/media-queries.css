@@ -1,0 +1,47 @@
+@media screen and (max-width: 805px) {
+  body {
+    padding: 40% 20px 0px;
+  }
+
+  main {
+    flex-direction: column;
+    position: relative;
+  }
+
+  #content {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 20px;
+  }
+
+  #container-image {
+    width: 100%;
+    position: absolute;
+    margin-top: 83px;
+    top: -160px;
+    left: 25%;
+  }
+
+  #container-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+  }
+
+  #woman-image {
+    top: 0px;
+    left: 0px;
+  }
+
+  #background-image {
+    width: 100%;
+    top: -30px;
+    left: 0px;
+  }
+
+  #box-image {
+    top: 45px;
+    left: -20px;
+  }
+}
