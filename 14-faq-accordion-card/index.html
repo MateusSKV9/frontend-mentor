@@ -1,58 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="styles/style.css">
-  <title>Frontend Mentor | FAQ Accordion Card</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <main>
-    <div id="image">
-      <img src="images/illustration-woman-online-desktop.svg" alt="illustration-woman-online-desktop">
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="image">
+        <div id="main-image">
+          <img
+            id="main"
+            src="images/illustration-woman-online-desktop.svg"
+            alt="illustration-woman-online-desktop"
+          />
+          <img
+            id="background"
+            src="images/bg-pattern-desktop.svg"
+            alt="bg-pattern-desktop"
+          />
+        </div>
+        <img
+          id="box"
+          src="images/illustration-box-desktop.svg"
+          alt="illustration-box-desktop"
+        />
+      </div>
 
-    <section id="content">
-      <h1>FAQ</h1>
-      <dl>
-        <dt>How many team members can I invite?</dt>
-        <dd>
-          You can invite up to 2 additional users on the Free plan. There is no limit on 
-          team members for the Premium plan.
-        </dd>
+      <section id="content">
+        <h1>FAQ</h1>
 
-        <dt>What is the maximum file upload size?</dt>
-        <dd>
-          No more than 2GB. All files in your account must fit your allotted storage space.
-        </dd>
+        <section>
+          <div class="asks">
+            <h4>How many team members can I invite?</h4>
+            <img src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
+          </div>
+          <p class="oculta answer">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </section>
 
-        <dt> How do I reset my password?</dt>
-        <dd>
-          Click “Forgot password” from the login page or “Change password” from your profile page.
-          A reset link will be emailed to you.
-        </dd>
+        <section>
+          <div class="asks">
+            <h4 class="open">What is the maximum file upload size?</h4>
+            <img class="icon-up" src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
+          </div>
+          <p class="answer">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </section>
 
-        <dt>Can I cancel my subscription?</dt>
-        <dd>
-          Yes! Send us a message and we’ll process your request no questions asked. Do you provide additional support? Chat and email support is available 24/7. Phone lines are open during normal business hours.
-        </dd>
-      </dl>
-    </section>
-  </main>
+        <section>
+          <div class="asks">
+            <h4>Can I cancel my subscription?</h4>
 
+            <img src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
+          </div>
+          <p class="oculta answer">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
+        </section>
 
+        <section>
+          <div class="asks">
+            <h4>How do I reset my password?</h4>
+            <img src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
+          </div>
+          <p class="oculta answer">
+            Yes! Send us a message and we’ll process your request no questions
+            asked. Do you provide apitional support? Chat and email support is
+            available 24/7. Phone lines are open during normal business hours.
+          </p>
+        </section>
+      </section>
+    </main>
 
-
-  
-
-  <!-- <div class="attribution">
+    <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
-</body>
+  </body>
 </html>
