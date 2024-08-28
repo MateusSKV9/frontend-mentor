@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
     <link
       rel="icon"
       type="image/png"
@@ -11,34 +10,26 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/media-queries.css">
     <title>Frontend Mentor | FAQ Accordion Card</title>
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
     <main>
-      <div id="image">
+      <div id="container-image">
         <div id="main-image">
           <img
-            id="main"
+            id="woman-image"
             src="images/illustration-woman-online-desktop.svg"
             alt="illustration-woman-online-desktop"
-          />
-          <img
-            id="background"
-            src="images/bg-pattern-desktop.svg"
-            alt="bg-pattern-desktop"
-          />
+            />
+            <img
+              id="background-image"
+              src="images/bg-pattern-desktop.svg"
+              alt="bg-pattern-desktop"
+            />
         </div>
         <img
-          id="box"
+          id="box-image"
           src="images/illustration-box-desktop.svg"
           alt="illustration-box-desktop"
         />
@@ -49,7 +40,7 @@
 
         <section>
           <div class="asks">
-            <h4>How many team members can I invite?</h4>
+            <h4 class="title-asks">How many team members can I invite?</h4>
             <img src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
           </div>
           <p class="oculta answer">
@@ -60,8 +51,12 @@
 
         <section>
           <div class="asks">
-            <h4 class="open">What is the maximum file upload size?</h4>
-            <img class="icon-up" src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
+            <h4 class="title-asks open">What is the maximum file upload size?</h4>
+            <img
+              class="icon-up"
+              src="images/icon-arrow-down.svg"
+              alt="icon-arrow-down"
+            />
           </div>
           <p class="answer">
             No more than 2GB. All files in your account must fit your allotted
@@ -71,7 +66,7 @@
 
         <section>
           <div class="asks">
-            <h4>Can I cancel my subscription?</h4>
+            <h4 class="title-asks">Can I cancel my subscription?</h4>
 
             <img src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
           </div>
@@ -83,7 +78,7 @@
 
         <section>
           <div class="asks">
-            <h4>How do I reset my password?</h4>
+            <h4 class="title-asks">How do I reset my password?</h4>
             <img src="images/icon-arrow-down.svg" alt="icon-arrow-down" />
           </div>
           <p class="oculta answer">
@@ -99,5 +94,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+  <script src="js/script.js"></script>
   </body>
 </html>

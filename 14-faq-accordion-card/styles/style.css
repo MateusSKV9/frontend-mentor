@@ -29,6 +29,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px 50px 0px;
 }
 
 .oculta {
@@ -39,88 +40,103 @@ main {
     background-color: white;
     box-shadow: 1px 4px 20px var(--very-dark-desaturated-blue);
     display: flex;
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
-    height: 400px;
+    min-height: 440px;
     border-radius: 20px;
 }
 
-#image {
+#container-image {
     width: 50%;
-    height: 100%;
     position: relative;
+    z-index: 5;
 }
 
 #main-image {
-    width: 110%;
-    position: absolute;
-    overflow: hidden;
-}
-
-#main-image {
-    overflow: hidden;
-    position: relative;
-    height: 100%;
-}
-
-#main-image img {
     width: 100%;
-    position: absolute;
-    left: -60px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 4;
 }
 
-#main {
+#woman-image {
+    width: 100%;
+    height: auto;
     position: absolute;
-    top: 30px;
+    top: 50px;
+    left: -70px;
     z-index: 2;
 }
 
-#background {
-    z-index: 1;
+#background-image {
+    width: 200%;
     position: absolute;
-    top: -300px !important;
-    left: -500px !important;
-    width: 200% !important;
+    top: -270px;
+    left: -494px;
+    z-index: -1;
 }
 
-#box {
-    z-index: 3;
+#box-image {
     position: absolute;
-    width: 150px;
-    top: 165px;
-    left: -73px;
+    width: 43%;
+    top: 160px;
+    left: -92px;
+    z-index: 9;
+    margin-left: 10px;
 }
 
 #content {
-    width: 50%;
-    padding: 30px;
+    width: 55%;
+    padding: 40px 60px 40px 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 30px;
+    gap: 15px;
 }
 
 #content h1 {
     color: var(--very-dark-desaturated-blue);
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
 #content section {
     width: 100%;
     color: var(--dark-grayish-blue);
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     border-bottom: 1px solid var(--light-grayish-blue);
 }
 
 .asks {
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .asks img {
     width: 15px;
     height: 10px;
+}
+
+.asks img:hover, .asks h4:hover {
+    cursor: pointer;
+}
+
+.asks h4 {
+    transition: all .25s ease;
+    font-weight: 400;
+    color: var(--very-dark-grayish-blue);
+}
+
+section p {
+    font-size: 0.9em;
+}
+
+.asks h4:hover {
+    color: var(--soft-red);
 }
 
 .answer {
@@ -133,4 +149,5 @@ main {
 
 .open {
     color: var(--very-dark-desaturated-blue);
+    font-weight: 800 !important;
 }
