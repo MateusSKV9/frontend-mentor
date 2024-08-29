@@ -1,0 +1,80 @@
+@media screen and (max-width: 890px) {
+    body {
+        background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
+        padding: 90px 40px 0px;
+    }
+
+    main {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    #container-introduce {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    #introduce {
+        width: 100%;
+    }
+
+    #introduce h1 {
+        font-size: 3em;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #assessments {
+        flex-direction: column;
+        margin-right: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .assessments-item {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .assessments-item:nth-child(2) {
+        margin-left: 0;
+        margin-right: 0px;
+    }
+    
+    .assessments-item:nth-child(3) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #container-testimonials {
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .testimonial-item {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .user {
+        width: auto;
+    }
+
+    footer {
+        padding: 7px;
+    }
+}
