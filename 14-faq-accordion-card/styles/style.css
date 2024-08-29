@@ -27,9 +27,9 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 50px 0px;
+    padding: 5% 50px 0px;
 }
 
 .oculta {
@@ -40,10 +40,12 @@ main {
     background-color: white;
     box-shadow: 1px 4px 20px var(--very-dark-desaturated-blue);
     display: flex;
+    justify-content: center;
     max-width: 900px;
     width: 100%;
     min-height: 440px;
     border-radius: 20px;
+    margin-bottom: 5%;
 }
 
 #container-image {
@@ -150,4 +152,55 @@ section p {
 .open {
     color: var(--very-dark-desaturated-blue);
     font-weight: 800 !important;
+}
+
+footer {
+    background-color: var(--very-dark-desaturated-blue);
+    width: calc(100% + 100px);
+    text-align: center;
+    color: var(--light-grayish-blue);
+    padding: 4px;
+    font-size: 0.9em;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--soft-violet);
+    transition: all .25s ease;
+    font-weight: 600;
+    position: relative;
+}
+
+footer a:hover {
+    color: var(--light-grayish-blue);
+}
+
+footer a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    background-color: var(--soft-red);
+    transition: all .25s ease;
+}
+
+footer a:hover::before {
+    width: 50%;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    right: 50%;
+    height: 2px;
+    background-color: var(--soft-red);
+    transition: all .25s ease;
+}
+
+footer a:hover::after {
+    width: 50%;
 }

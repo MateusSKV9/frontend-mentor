@@ -1,25 +1,27 @@
 @media screen and (max-width: 805px) {
   body {
-    padding: 40% 20px 0px;
+    padding: 25% 20px 0px;
   }
 
   main {
+    width: 500px;
     flex-direction: column;
     position: relative;
+    margin-bottom: 10%;
   }
 
   #content {
     width: 100%;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px 20px;
+    padding: 100px 30px 30px;
   }
 
   #container-image {
     width: 100%;
     position: absolute;
     margin-top: 83px;
-    top: -160px;
+    top: -198px;
     left: 25%;
   }
 
@@ -36,12 +38,44 @@
 
   #background-image {
     width: 100%;
-    top: -30px;
+    top: 102px;
     left: 0px;
   }
 
   #box-image {
-    top: 45px;
-    left: -20px;
+    display: none;
+  }
+
+  footer {
+    width: calc(100% + 40px);
+  }
+}
+
+@media screen and (max-width: 505px) {
+  body {
+    padding: 40% 10px 0px;
+  }
+
+  main {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  #container-image {
+    width: 70%;
+    position: absolute;
+    margin-top: 83px;
+    top: -185px;
+    left: 45px;
+  }
+
+  #background-image {
+    width: 100%;
+    top: 100px;
+    left: 0px;
+  }
+
+  footer {
+    width: calc(100% + 20px);
   }
 }

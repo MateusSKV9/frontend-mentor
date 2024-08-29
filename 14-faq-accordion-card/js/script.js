@@ -17,3 +17,18 @@ for(let i = 0; i<asks.length; i++) {
         }
     });
 }
+
+const woman_image = document.getElementById('woman-image');
+const background_image = document.getElementById('background-image');
+
+function updateImages() {
+    if (window.innerWidth <= 805) {
+        woman_image.src = 'images/illustration-woman-online-mobile.svg';
+        background_image.src = 'images/bg-pattern-mobile.svg';
+    } else {
+        woman_image.src = 'images/illustration-woman-online-desktop.svg';
+        background_image.src = 'images/bg-pattern-desktop.svg';
+    }
+}
+updateImages();
+window.addEventListener('resize', updateImages);
