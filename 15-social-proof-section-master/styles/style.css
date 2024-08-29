@@ -18,22 +18,28 @@
 body {
     width: 100%;
     min-height: 100vh;
-    padding: 20px;
+    padding: 90px 50px 0px;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 100px;
     color: var(--very-dark-magenta);
     font-family: 'League Spartan';
+    position: relative;
+
+    background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
 }
 
 main {
-    max-width: 1000px;
+    max-width: 1100px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 60px;
 }
 
 #container-introduce {
@@ -43,27 +49,30 @@ main {
 }
 
 #introduce {
-    width: 50%;
+    width: 40%;
 }
 
 #introduce h1 {
-    font-size: 2.5em;
+    font-size: 3.7em;
     margin-bottom: 20px;
 }
 
 #introduce p {
     color: var(--dark-grayish-magenta);
+    font-size: 1.1em;
 }
 
 #assessments {
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 12px;
+    margin-right: 100px;
 } 
 
 .assessments-item {
-    width: 400px;
     padding: 15px 30px;
     display: flex;
     align-items: center;
@@ -74,20 +83,24 @@ main {
 }
 
 .assessments-item:nth-child(2) {
-    margin-left: 25px;
-    margin-right: -25px;
+    margin-left: 50px;
+    margin-right: -50px;
 }
 
 .assessments-item:nth-child(3) {
-    margin-left: 50px;
-    margin-right: -50px;
+    margin-left: 100px;
+    margin-right: -100px;
+}
+
+.assessments-item p {
+    font-weight: bold;
 }
 
 .stars-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 7px;
 }
 
 .stars-container img {
@@ -109,8 +122,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
+    gap: 20px;
+    padding: 30px;
+}
+
+.testimonial-item p {
+    line-height: 20px;
 }
 
 .testimonial-item:nth-child(2) {
@@ -133,12 +150,12 @@ main {
 
 .user h3 {
     color: var(--white);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .data {
     width: 100%;
-
+    line-height: 18px;
 }
 
 .data span {
@@ -147,5 +164,62 @@ main {
 
 .user img {
     border-radius: 50%;
-    width: 30px;
+    width: 40px;
+}
+
+footer {
+    background-color: var(--very-dark-magenta);
+    color: var(--white);
+    width: calc(100% + 100px);
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--soft-pink);
+    transition: all .2s ease;
+    position: relative;
+}
+
+footer a:hover {
+    color: var(--light-Grayish-magenta);
+}
+
+footer a::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--soft-pink);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: all .2s ease;
+}
+
+footer a:hover::before {
+    width: 50%;
+    height: 1px;
+}
+
+footer a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--soft-pink);
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transition: all .2s ease;
+}
+
+footer a:hover::after {
+    width: 50%;
+    height: 1px;
 }
