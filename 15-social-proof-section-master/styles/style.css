@@ -9,3 +9,143 @@
   --white: hsl(0, 0%, 100%);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--very-dark-magenta);
+    font-family: 'League Spartan';
+}
+
+main {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#container-introduce {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#introduce {
+    width: 50%;
+}
+
+#introduce h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#introduce p {
+    color: var(--dark-grayish-magenta);
+}
+
+#assessments {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
+
+.assessments-item {
+    width: 400px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--light-Grayish-magenta);
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.assessments-item:nth-child(2) {
+    margin-left: 25px;
+    margin-right: -25px;
+}
+
+.assessments-item:nth-child(3) {
+    margin-left: 50px;
+    margin-right: -50px;
+}
+
+.stars-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.stars-container img {
+    width: 15px;
+    height: 15px;
+}
+
+#container-testimonials {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+}
+
+.testimonial-item {
+    background-color: var(--very-dark-magenta);
+    color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.testimonial-item:nth-child(2) {
+    margin-top: 12px;
+    margin-bottom: -12px;
+}
+
+.testimonial-item:nth-child(3) {
+    margin-top: 24px;
+    margin-bottom: -24px;
+}
+
+.user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.user h3 {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.data {
+    width: 100%;
+
+}
+
+.data span {
+    color: var(--soft-pink);
+}
+
+.user img {
+    border-radius: 50%;
+    width: 30px;
+}
