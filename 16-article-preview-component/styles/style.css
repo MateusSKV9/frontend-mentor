@@ -44,6 +44,7 @@ p {
 #image {
   width: 40%;
   background: url(../images/drawers.jpg) no-repeat center center/cover;
+  border-radius: 10px 0 0 10px;
 }
 
 #content {
