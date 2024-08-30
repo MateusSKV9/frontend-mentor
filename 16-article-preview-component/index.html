@@ -5,48 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/media-queries.css">
   <title>Frontend Mentor | Article preview component</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
   <main>
-    <div id="image">
-      <img src="images/drawers.jpg" alt="drawers">
-    </div>
+    <div id="image"></div>
 
     <section id="content">
-      <h3>
+      <h2>
         Shift the overall look and feel by adding these wonderful 
         touches to furniture in your home
-      </h3>
+      </h2>
       <p>
         Ever been in a room and felt like something was missing? Perhaps 
         it felt slightly bare and uninviting. I’ve got some simple tips 
         to help you make any room feel complete.
       </p>
-      <section id="user">
-        <div id="user-container">
+
+      <section id="section-user">
+        <div id="container-user">
           <div id="user-profile">
             <img src="images/avatar-michelle.jpg" alt="avatar-michelle">
           </div>
           <div id="user-data">
-            <h3>Michelle Appleton</h3>
+            <h4>Michelle Appleton</h4>
             <span>28 Jun 2020</span>
           </div>
         </div>
-        <div id="share"><img src="images/icon-share.svg" alt="icon-share"></div>
+        <div id="share">
+          <div id="box-share" class="disable">
+            <span>Share</span>
+            <img src="images/icon-facebook.svg" alt="icon-facebook">
+            <img src="images/icon-twitter.svg" alt="icon-twitter">
+            <img src="images/icon-pinterest.svg" alt="icon-pinterest">
+          </div>
+
+          <i class="fa-solid fa-share"></i>
+        </div>
       </section>
     </section>
   </main>
   
-  <!-- Share -->
-  
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener nnoreferrer">Frontend Mentor</a>. </p>
+    <p>Coded by <a href="#">Your Name Here</a>.</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/0a1412cd70.js" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
