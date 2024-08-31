@@ -10,6 +10,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/media-queries.css">
     <title>Frontend Mentor | Four card feature section</title>
   </head>
   <body>
@@ -24,41 +25,45 @@
       </section>
 
       <div id="container-cards">
-        <section id="card-item">
-          <h3>Supervisor</h3>
-          <p>Monitors activity to identify project roadblocks</p>
-          <img src="images/icon-supervisor.svg" alt="icon-supervisor" />
-        </section>
+        <div class="col">
+          <section class="card-item number-1">
+            <h3>Supervisor</h3>
+            <p>Monitors activity to identify project roadblocks</p>
+            <img src="images/icon-supervisor.svg" alt="icon-supervisor" />
+          </section>
+        </div>
 
-        <section id="card-item">
-          <h3>Team Builder</h3>
-          <p>
-            Scans our talent network to create the optimal team for your project
-          </p>
-          <img src="images/icon-team-builder.svg" alt="icon-team-builder" />
-        </section>
+        <div class="col-2">
+          <section class="card-item number-2">
+            <h3>Team Builder</h3>
+            <p>
+              Scans our talent network to create the optimal team for your project
+            </p>
+            <img src="images/icon-team-builder.svg" alt="icon-team-builder" />
+          </section>
 
-        <section id="card-item">
-          <h3>Karma</h3>
-          <p>Regularly evaluates our talent to ensure quality</p>
-          <img src="images/icon-karma.svg" alt="icon-karma" />
-        </section>
+          <section class="card-item number-3">
+            <h3>Karma</h3>
+            <p>Regularly evaluates our talent to ensure quality</p>
+            <img src="images/icon-karma.svg" alt="icon-karma" />
+          </section>
+        </div>
 
-        <section id="card-item">
-          <h3>Calculator</h3>
-          <p>
-            Uses data from past projects to provide better delivery estimates
-          </p>
-          <img src="images/icon-calculator.svg" alt="icon-calculator" />
-        </section>
+        <div class="col">
+          <section class="card-item number-4">
+            <h3>Calculator</h3>
+            <p>
+              Uses data from past projects to provide better delivery estimates
+            </p>
+            <img src="images/icon-calculator.svg" alt="icon-calculator" />
+          </section>
+        </div>
       </div>
     </main>
 
-    <!-- <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer> -->
+    <footer>
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. </p>
+      <p>Coded by <a href="#">Mateus Santos</a>.</p>
+    </footer>
   </body>
 </html>
