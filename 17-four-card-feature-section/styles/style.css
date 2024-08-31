@@ -51,7 +51,7 @@ main {
 
 #introduce h1 {
     color: var(--very-dark-blue);
-    font-size: 1.9em;
+    font-size: 2em;
 }
 
 #introduce p {
@@ -63,7 +63,7 @@ main {
 }
 
 #introduce h1:nth-of-type(1) {
-    font-weight: 300;
+    font-weight: 200;
 }
 
 #container-cards {
