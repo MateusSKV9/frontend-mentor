@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
     --Red: hsl(0, 100%, 74%);
@@ -26,7 +26,8 @@ a {
 body {
     width: 100%;
     min-height: 100vh;
-    background: var(--Red) url(../images/bg-intro-desktop.png) no-repeat center center/cover; 
+    background: var(--Red) url(../images/bg-intro-desktop.png) no-repeat center
+        center/cover;
     font-family: "Poppins", Arial, Helvetica, sans-serif;
     padding: 7% 7% 0%;
     display: flex;
@@ -39,11 +40,11 @@ body {
 main {
     width: 100%;
     height: 100%;
-   color: white;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   margin: 0px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
 }
 
 #content {
@@ -74,7 +75,7 @@ h1 {
     color: white;
     text-align: center;
     box-shadow: 0px 6px 1px rgba(0, 0, 0, 0.18);
-    
+
     transition: all 0.3s ease;
 }
 
@@ -107,8 +108,7 @@ input {
     font-weight: 600;
     padding: 12px 0px 12px 20px;
     border-radius: 5px;
-    border: 1px solid var(--Grayish-Blue);
-    transition: all .5s ease;
+    border: 2px solid var(--Grayish-Blue);
 }
 
 input::placeholder {
@@ -117,7 +117,7 @@ input::placeholder {
 }
 
 input:hover {
-    border: 1px solid var(---Blue);
+    border: 2px solid var(---Blue);
 }
 
 #claim-free-trial {
@@ -130,10 +130,10 @@ input:hover {
     font-size: 0.8em;
     box-shadow: 0px 2px 1px hsla(154, 99%, 30%, 0.785);
     cursor: pointer;
-    will-change: transform;
+    transition: all 0.25s ease;
 }
 
-#claim-free-trial:hover {
+#claim-free-trial:active {
     transform: scale(0.98);
 }
 
@@ -154,6 +154,7 @@ footer {
     font-size: 12px;
     text-align: center;
     padding: 3px 0px;
+    margin-top: 40px;
 }
 
 footer * {
@@ -165,11 +166,11 @@ footer a {
 }
 
 footer a::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 1px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     background-color: white;
     bottom: 0;
     left: 50%;
@@ -180,11 +181,11 @@ footer a:hover::before {
 }
 
 footer a::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 1px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     background-color: white;
     bottom: 0;
     right: 50%;
@@ -192,4 +193,39 @@ footer a::after {
 
 footer a:hover::after {
     width: 50%;
+}
+
+#inputs div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#inputs div p {
+    text-align: end;
+}
+
+.error {
+    border: 2px solid var(--Red);
+    color: var(--Red);
+}
+
+.error-message {
+    color: var(--Red);
+    font-size: 12px;
+}
+
+.success {
+    border: 2px solid var(--Green);
+}
+
+.container-input {
+    position: relative;
+}
+
+.icon-error {
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
 }

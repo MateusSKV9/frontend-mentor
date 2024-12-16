@@ -1,60 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/media-queries.css">
-    <title>Frontend Mentor | Intro component with sign up form</title>
-  </head>
-  <body>
-    <main>
-      <section id="content">
-        <h1>Learn to code by watching others </h1>
-        
-        <p>
-          See how experienced developers solve
-          problems in real-time. Watching scripted tutorials is great, but
-          understanding how developers think is invaluable. 
-        </p>
-      </section>
-      
-      <div id="form">
-        <a id="try-free" href=""><strong>Try it free 7 days</strong> <span>then  $20/mo. thereafter</span></a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/media-queries.css" />
+        <title>Frontend Mentor | Intro component with sign up form</title>
+    </head>
+    <body>
+        <main>
+            <section id="content">
+                <h1>Learn to code by watching others</h1>
 
-        <form action="#">
-          <div id="inputs">
-            <input type="text" name="first-name" id="ifirst-name" placeholder="First Name">
-            <input type="text" name="last-name" id="ilast-name" placeholder="Last Name">
-            <input type="email" name="email" id="iemail" placeholder="Email Address">
-            <input type="password" name="password" id="ipassword" placeholder="Password">
-          </div>
+                <p>
+                    See how experienced developers solve problems in real-time.
+                    Watching scripted tutorials is great, but understanding how
+                    developers think is invaluable.
+                </p>
+            </section>
 
-          <input type="submit" value="Claim your free trial" id="claim-free-trial">
+            <div id="form">
+                <a id="try-free" href=""
+                    ><strong>Try it free 7 days</strong>
+                    <span>then $20/mo. thereafter</span></a
+                >
 
-          <p id="terms"> By clicking the button, you are agreeing to our <a href="#">
-            <strong>Terms and Services</strong></a></p>
-        </form>
-      </div>
-    </main>
+                <form action="#">
+                    <div id="inputs">
+                        <div>
+                            <div class="container-input">
+                                <input
+                                    type="text"
+                                    name="first-name"
+                                    id="ifirst-name"
+                                    placeholder="First Name"
+                                />
+                                <img
+                                    class="icon-error"
+                                    src="images/icon-error.svg"
+                                    alt="icon-error" hidden
+                                />
+                            </div>
+                            <p class="feedback error-message" hidden>
+                                First name cannot be empety
+                            </p>
+                        </div>
 
-    <footer>
-      <p>
-        Challenge by
-        <a
-          href="https://www.frontendmentor.io?ref=challenge"
-          target="_blank"
-          rel="noopener noreferrer">Frontend Mentor</a
-        >. Coded by <a href="#">Mateus Santos</a>.
-      </p>
-    </footer>
+                        <div>
+                            <div class="container-input">
+                                <input
+                                    type="text"
+                                    name="last-name"
+                                    id="ilast-name"
+                                    placeholder="Last Name"
+                                />
+                                <img
+                                    class="icon-error"
+                                    src="images/icon-error.svg"
+                                    alt="icon-error" hidden
+                                />
+                            </div>
+                            <p class="feedback error-message" hidden>
+                                Last name cannot be empety
+                            </p>
+                        </div>
 
-    <script src="js/script.js"></script>
-  </body>
+                        <div>
+                            <div class="container-input">
+                                <input
+                                    type="text"
+                                    name="email"
+                                    id="iemail"
+                                    placeholder="Email Address"
+                                />
+                                <img
+                                    class="icon-error"
+                                    src="images/icon-error.svg"
+                                    alt="icon-error" hidden
+                                />
+                            </div>
+                            <p class="feedback error-message" hidden>
+                                Looks like this is not email
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="container-input">
+                                <input
+                                    type="password"
+                                    name="password"
+                                    id="ipassword"
+                                    placeholder="Password"
+                                />
+                                <img
+                                    class="icon-error"
+                                    src="images/icon-error.svg"
+                                    alt="icon-error" hidden
+                                />
+                            </div>
+                            <p class="feedback error-message" hidden>
+                                Password cannot be empety
+                            </p>
+                        </div>
+                    </div>
+
+                    <input
+                        type="submit"
+                        value="Claim your free trial"
+                        id="claim-free-trial"
+                    />
+
+                    <p id="terms">
+                        By clicking the button, you are agreeing to our
+                        <a href="#"> <strong>Terms and Services</strong></a>
+                    </p>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Frontend Mentor</a
+                >. Coded by <a href="#">Mateus Santos</a>.
+            </p>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
 </html>
