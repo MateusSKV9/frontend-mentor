@@ -104,18 +104,17 @@ form {
 }
 
 input {
-    padding: 12px 0px;
+    font-weight: 600;
+    padding: 12px 0px 12px 20px;
     border-radius: 5px;
     border: 1px solid var(--Grayish-Blue);
     transition: all .5s ease;
 }
 
 input::placeholder {
-    padding-left: 15px;
     font-family: "Poppins";
     font-weight: 500;
 }
-
 
 input:hover {
     border: 1px solid var(---Blue);
