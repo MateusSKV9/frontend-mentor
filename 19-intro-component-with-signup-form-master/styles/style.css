@@ -20,6 +20,7 @@
 
 a {
     text-decoration: none;
+    position: relative;
 }
 
 body {
@@ -27,7 +28,12 @@ body {
     min-height: 100vh;
     background: var(--Red) url(../images/bg-intro-desktop.png) no-repeat center center/cover; 
     font-family: "Poppins", Arial, Helvetica, sans-serif;
-    padding: 100px;
+    padding: 7% 7% 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
 }
 
 main {
@@ -55,7 +61,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     gap: 15px;
 }
 
@@ -68,10 +74,16 @@ h1 {
     color: white;
     text-align: center;
     box-shadow: 0px 6px 1px rgba(0, 0, 0, 0.18);
+    
+    transition: all 0.3s ease;
 }
 
 #try-free span {
     font-weight: 300;
+}
+
+#try-free:hover {
+    transform: scale(1.05);
 }
 
 form {
@@ -118,6 +130,12 @@ input:hover {
     letter-spacing: 1px;
     font-size: 0.8em;
     box-shadow: 0px 2px 1px hsla(154, 99%, 30%, 0.785);
+    cursor: pointer;
+    will-change: transform;
+}
+
+#claim-free-trial:hover {
+    transform: scale(0.98);
 }
 
 #terms {
@@ -128,4 +146,51 @@ input:hover {
 
 #terms a {
     color: var(--Red);
+}
+
+footer {
+    background-color: var(---Blue);
+    width: calc(117%);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 3px 0px;
+}
+
+footer * {
+    color: white;
+}
+
+footer a {
+    font-weight: bold;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    transition: all .3s ease;
+    background-color: white;
+    bottom: 0;
+    left: 50%;
+}
+
+a:hover::before {
+    width: 50%;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    transition: all .3s ease;
+    background-color: white;
+    bottom: 0;
+    right: 50%;
+}
+
+a:hover::after {
+    width: 50%;
 }
