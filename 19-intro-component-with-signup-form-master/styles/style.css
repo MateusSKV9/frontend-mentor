@@ -165,7 +165,7 @@ footer a {
     font-weight: bold;
 }
 
-a::before {
+footer a::before {
     content: '';
     position: absolute;
     width: 0;
@@ -176,11 +176,11 @@ a::before {
     left: 50%;
 }
 
-a:hover::before {
+footer a:hover::before {
     width: 50%;
 }
 
-a::after {
+footer a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -191,6 +191,6 @@ a::after {
     right: 50%;
 }
 
-a:hover::after {
+footer a:hover::after {
     width: 50%;
 }
