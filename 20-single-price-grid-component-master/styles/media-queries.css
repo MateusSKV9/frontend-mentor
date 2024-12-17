@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 450px) {
+  #container-sections {
+    flex-direction: column;
+  }
+
+  #subscription, #why-us {
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
