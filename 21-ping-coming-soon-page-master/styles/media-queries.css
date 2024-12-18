@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 810px) {
+  #container-search {
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  #container-search form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+
+  #error-message {
+    position:static;
+  }
+
+  #container-input-email {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 0px 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
