@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Ping coming soon page</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/media-queries.css">
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -22,7 +23,10 @@
 
     <div id="container-search">
       <form action="" novalidate>
-        <input type="email" name="email" id="iemail" aria-label="email" placeholder="Your email address..." required>
+        <div id="container-input-email">
+          <input type="email" name="email" id="iemail" aria-label="email" placeholder="Your email address..." required>
+          <p id="error-message" >Please provide a valid email address</p>
+        </div>
         <input type="submit" value="Notify Me">
       </form>
     </div>

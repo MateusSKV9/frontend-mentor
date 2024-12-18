@@ -38,6 +38,8 @@ main {
 }
 
 #image-logo img {
+  display: block;
+  margin: 10px auto;
   width: 80%;
 }
 
@@ -45,6 +47,7 @@ h1 {
   color: var(--Gray);
   font-weight: 300;
   margin: 20px 0px 5px;
+  text-align: center;
 }
 
 h1 span {
@@ -77,26 +80,45 @@ p {
   width: 100%;
 }
 
+#container-input-email {
+  width: 80%;
+}
+
 input[type="email"] {
   border: 1px solid var(--Gray);
   padding: 10px;
+  padding-left: 15px;
   border-radius: 20px;
-  width: 80%;
+  width: 100%;
 }
 
 input[type="email"]::placeholder {
   color: var(--Gray);
-  padding-left: 5px;
+}
+
+#error-message {
+  position: absolute;
+  font-size: 0.65em;
+  font-style: italic;
+  margin: 4px 0px 0px 10px;
+  color: var(--Light-Red);
 }
 
 input[type="submit"] {
   border: none;
   background-color: var(--Blue);
   color: white;
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 0.95;
   padding: 12px 30px;
   border-radius: 20px;
   box-shadow: 0px 3px 10px var(--Pale-Blue);
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  transform: scale(0.98);
 }
 
 #image-dashboard img {
@@ -109,6 +131,7 @@ i {
   font-size: 0.65em;
   color: var(--Blue);
   margin-top: 1px;  
+  transition: all .2s ease;
 }
 
 #container-social {
@@ -132,4 +155,13 @@ i {
   border-radius: 50%;
   width: 22px;
   height: 22px;
+  transition: all .2s ease;
+}
+
+.box-icon:hover {
+  background-color: var(--Blue);
+}
+
+.box-icon:hover i {
+  color: white;
 }
