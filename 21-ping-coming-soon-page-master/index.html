@@ -13,21 +13,32 @@
 </head>
 <body>
   <main>
-    <h1>We are launching soon!</h1>
-    <h3>Subscribe and get notified</h3>
+    <div id="image-logo">
+      <img src="images/logo.svg" alt="logo">
+    </div>
+
+    <h1>We are launching <span>soon!</span></h1>
+    <h5>Subscribe and get notified</h5>
 
     <div id="container-search">
-      <input type="search" name="search" id="isearch" aria-label="search-barr">
-      <input type="submit" value="Notify Me">
+      <form action="" novalidate>
+        <input type="email" name="email" id="iemail" aria-label="email" placeholder="Your email address..." required>
+        <input type="submit" value="Notify Me">
+      </form>
     </div>
 
-    <div id="container-social">
-      <i class="fa-brands fa-facebook-f"></i>
-      <i class="fa-brands fa-twitter"></i>
-      <i class="fa-brands fa-instagram"></i>
+    <div id="image-dashboard">
+      <img src="images/illustration-dashboard.png" alt="illustration-dashboard">
     </div>
 
-    <p>&copy; Copyright Ping. All rights reserved.</p>
+    <div id="more-informations">
+      <div id="container-social">
+        <div class="box-icon"><i class="fa-brands fa-facebook-f"></i></div>
+        <div class="box-icon"><i class="fa-brands fa-twitter"></i></div>
+        <div class="box-icon"><i class="fa-brands fa-instagram"></i></div>
+      </div>
+      <p>&copy; Copyright Ping. All rights reserved.</p>
+    </div>
   </main>
 
   <!-- <footer>
