@@ -121,6 +121,10 @@ input[type="submit"]:hover {
   transform: scale(0.98);
 }
 
+input[type="submit"]:active {
+  transform: scale(0.96);
+}
+
 #image-dashboard img {
   width: 41%;
   display: block;
@@ -164,4 +168,8 @@ i {
 
 .box-icon:hover i {
   color: white;
+}
+
+input[type="email"].error {
+  border: 1px solid var(--Light-Red);
 }
