@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --Violet: hsl(257, 40%, 49%);
@@ -17,16 +17,22 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   font-family: "Open+Sans", Arial, Helvetica, sans-serif;
   background-color: var(--Violet);
   color: white;
-  padding: 20px 40px;
-  background: var(--Violet) url(../images/bg-desktop.svg) no-repeat center center/cover;
+  padding: 20px 40px 0px;
+  background: var(--Violet) url(../images/bg-desktop.svg) no-repeat center
+    center/cover;
+;
 }
 
 #logo img {
-  width: 12%;
+  width: 100%;
+  max-width:  160px;
 }
 
 main {
@@ -62,7 +68,7 @@ h1 {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
-p {
+main p {
   margin-bottom: 25px;
 }
 
@@ -75,8 +81,9 @@ a {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 10px;
   padding-right: 30px;
+  margin-bottom: 10px;
 }
 
 .box-icon {
@@ -87,13 +94,85 @@ a {
   height: 25px;
   border: 1px solid white;
   border-radius: 50%;
+  transition: all .2s ease;
+} 
+
+i {
+  margin-top: 1px;
+}
+
+.box-icon:hover {
+  border: 1px solid var(--Soft-Magenta);
+}
+
+.box-icon:hover i {
+  color: var(--Soft-Magenta);
 }
 
 #btnRegister {
+  display: inline-block;
   background-color: white;
   color: var(--Violet);
   padding: 10px 40px;
   border-radius: 20px;
   font-size: 0.9em;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.608);
+  transition: all .2s ease;
+}
+
+#btnRegister:hover {
+  background-color: var(--Soft-Magenta);
+  color: white;
+}
+
+#btnRegister:active {
+  transform: scale(0.96);
+}
+
+footer {
+  width: calc(100% + 80px);
+  font-size: 12px;
+  padding: 4px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: rgb(25, 25, 25);
+}
+
+footer a {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+}
+
+footer a:hover::before {
+  width: 50%;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  right: 50%;
+}
+
+footer a:hover::after {
+  width: 50%;
 }
