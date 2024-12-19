@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 @media screen and (max-width: 810px) {
+  #image-logo {
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+
   #container-search {
     justify-content: center;
     align-items: center;
@@ -35,11 +40,21 @@
     padding: 0px 10px;
   }
 
+  #image-logo {
+    margin-top: 70px;
+  
+  }
+
   h1 {
     font-size: 1.5em;
   }
 
   #container-search {
     width: 60%;
+  }
+
+  footer {
+    width: calc(100% + 20px);
+    flex-direction: column;
   }
 }

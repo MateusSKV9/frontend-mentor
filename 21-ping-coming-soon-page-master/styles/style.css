@@ -23,9 +23,10 @@ body {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 1.18em;
+
 }
 
 main {
@@ -39,14 +40,14 @@ main {
 
 #image-logo img {
   display: block;
-  margin: 10px auto;
+  margin: 25px auto 0px;
   width: 80%;
 }
 
 h1 {
   color: var(--Gray);
   font-weight: 300;
-  margin: 20px 0px 5px;
+  margin: 10px 0px 5px;
   text-align: center;
 }
 
@@ -172,4 +173,56 @@ i {
 
 input[type="email"].error {
   border: 1px solid var(--Light-Red);
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--Blue);
+}
+
+footer a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+}
+
+footer a:hover::before {
+  width: 50%;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  right: 50%;
+}
+
+footer a:hover::after {
+  width: 50%;
+}
+
+footer p {
+  color: white;
+  font-size: 11px; text-align: center;
 }
