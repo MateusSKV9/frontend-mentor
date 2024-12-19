@@ -20,12 +20,16 @@
     align-items: center;
   }
 
-  #container-content * {
+  #image, #content {
     width: 100%;
   }
 
   #content {
     text-align: center;
+  }
+
+  #btnRegister {
+  
   }
 
   #container-social {
@@ -37,6 +41,8 @@
     flex-direction: column;
     margin-top: 20px;
   }
+
+
 }
 
 @media screen and (max-width: 431px) {
