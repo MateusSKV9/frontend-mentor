@@ -34,4 +34,8 @@
   h1 {
     font-size: 1.5em;
   }
+
+  #container-search {
+    width: 60%;
+  }
 }
