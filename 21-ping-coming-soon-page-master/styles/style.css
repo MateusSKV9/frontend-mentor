@@ -186,6 +186,7 @@ footer {
   width: 100%;
   padding: 3px;
   display: flex;
+  margin-top: 30px;
   justify-content: center;
   align-items: center;
   gap: 5px;
