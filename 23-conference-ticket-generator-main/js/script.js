@@ -1,26 +1,29 @@
-const container = document.getElementById('container-input-file');
-const inputFile = document.getElementById('iAvatar');
-const iconUpload = document.getElementById('icon-upload');
-const labelUpload = document.getElementById('label-upload');
+const container = document.getElementById("container-input-file");
+const inputFile = document.getElementById("iAvatar");
+const iconUpload = document.getElementById("icon-upload");
+const labelUpload = document.getElementById("label-upload");
+const fileMessage = document.getElementById("message-info");
+const submit = document.querySelector('input[type="submit"]');
+let fileIsValid = false; // Inicializa como falso
 
 // Redireciona o clique para o input file
-container.addEventListener('click', () => inputFile.click());
+container.addEventListener("click", () => inputFile.click());
 
 // Evento para arrastar arquivos sobre o contêiner
-container.addEventListener('dragover', (event) => {
+container.addEventListener("dragover", (event) => {
   event.preventDefault();
-  container.classList.add('dragover');
+  container.classList.add("dragover");
 });
 
 // Evento para quando o arquivo sai do contêiner
-container.addEventListener('dragleave', () => {
-  container.classList.remove('dragover');
+container.addEventListener("dragleave", () => {
+  container.classList.remove("dragover");
 });
 
 // Evento para soltar arquivos
-container.addEventListener('drop', (event) => {
+container.addEventListener("drop", (event) => {
   event.preventDefault();
-  container.classList.remove('dragover');
+  container.classList.remove("dragover");
 
   const files = event.dataTransfer.files;
 
@@ -31,7 +34,7 @@ container.addEventListener('drop', (event) => {
 });
 
 // Evento para quando um arquivo é selecionado pelo input
-inputFile.addEventListener('change', (event) => {
+inputFile.addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
     handleFile(file);
@@ -40,30 +43,71 @@ inputFile.addEventListener('change', (event) => {
 
 // Função para exibir a imagem no contêiner
 function handleFile(file) {
-  if (file.type.startsWith('image/')) {
+  if (file.type.startsWith("image/")) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
       // Remove ícone e texto do contêiner
-      iconUpload.style.display = 'none';
-      labelUpload.style.display = 'none';
+      iconUpload.style.display = "none";
+      labelUpload.style.display = "none";
 
       // Adiciona a imagem carregada
-      const img = document.createElement('img');
+      const img = document.createElement("img");
       img.src = e.target.result;
-      img.classList.add('preview');
+      img.classList.add("preview");
 
       // Remove prévias anteriores (se houver)
-      const existingPreview = container.querySelector('img.preview');
+      const existingPreview = container.querySelector("img.preview");
       if (existingPreview) {
         existingPreview.remove();
       }
 
       container.appendChild(img);
+      fileIsValid = true; // Arquivo válido foi adicionado
+      fileMessage.classList.remove("errorMessage"); // Remove erro
     };
 
     reader.readAsDataURL(file); // Converte o arquivo para uma URL base64
   } else {
-    alert('Por favor, arraste uma imagem válida!');
+    fileIsValid = false;
+    alert("Por favor, adicione uma imagem válida!"); // Mensagem de erro
   }
 }
+
+// Função para validar email
+function emailValidate(event) {
+  const inputEmail = document.getElementById("iEmail");
+  const email = inputEmail.value.trim();
+  const errorEmail = document.getElementById("errorEmail");
+  let emailIsValid = true;
+
+  if (!email.includes("@") || !email.includes(".com")) {
+    inputEmail.classList.add("errorInput");
+    errorEmail.hidden = false;
+    errorEmail.classList.add("errorMessage");
+    emailIsValid = false;
+  } else {
+    inputEmail.classList.remove("errorInput");
+    errorEmail.hidden = true;
+    errorEmail.classList.remove("errorMessage");
+    emailIsValid = true;
+  }
+
+  if (!emailIsValid) {
+    event.preventDefault();
+  }
+}
+
+// Validação no envio do formulário
+submit.addEventListener("click", function (event) {
+  const fullName = document.getElementById("")
+
+  emailValidate(event);
+
+  if (!fileIsValid) {
+    fileMessage.classList.add("errorMessage");
+    event.preventDefault(); // Previne o envio do formulário
+  }
+
+  
+});
