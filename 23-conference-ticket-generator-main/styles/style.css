@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 :root {
   --Neutral0: hsl(0, 0%, 100%);
   --Neutral-300: hsl(252, 6%, 83%);
   --Neutral-500: hsl(245, 15%, 58%);
-  --Neutral-700: hsl(245, 19%, 35%);
+  --Neutral-700: hsla(245, 19%, 35%, 0.5);
   --Neutral-900: hsl(248, 70%, 10%);
 
   --Orange-500: hsl(7, 88%, 67%);
@@ -25,7 +25,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  padding: 15px 10px 0px;
+  padding: 20px 10px 0px;
   text-align: center;
   font-family: "Inconsolata", Arial, Helvetica, sans-serif;
   background-color: var(--Neutral-900);
@@ -33,14 +33,27 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  background: var(--Neutral-900) url("../assets/images/background-desktop.png") no-repeat center center/cover;
-  background-image: none;
+  background-image: 
+    url("../assets/images/pattern-lines.svg"),
+    url("../assets/images/pattern-squiggly-line-bottom.svg"),
+    url("../assets/images/pattern-squiggly-line-top.svg"),
+    url("../assets/images/pattern-circle.svg"),
+    url("../assets/images/background-desktop.png");
+  background-position: 
+    top center,
+    bottom left,
+    top right,
+    1000px center,
+    center center;
+  background-repeat: no-repeat;
+  background-size: 
+    cover, auto, auto, auto, cover;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -53,7 +66,7 @@ main {
 }
 
 form {
-  width: 450px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 15px;
@@ -74,19 +87,18 @@ form div {
 #iAvatar {
   height: 80px;
   border: 1px solid var(--Neutral-300);
-  border-style:dashed;
+  border-style: dashed;
 }
 
 #container-input-file img.preview {
   position: absolute;
-  top: 50%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
   object-fit: cover;
   border-radius: 5px;
-  border-radius: 10px;
   border: 1px solid var(--Neutral-300);
 }
 
@@ -104,8 +116,50 @@ label {
   transform: translate(-50%, -50%);
 }
 
+input[type="file"] {
+  display: none;
+}
+
+#file-information {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#container-input-file {
+  position: relative;
+  height: 130px;
+  border: 1px solid var(--Neutral-300);
+  background-color: var(--Neutral-700);
+  border-radius: 5px;
+  border-style: dashed;
+  border-radius: 10px;
+}
+
+#icon-upload {
+  background-color: var(--Neutral-900);
+  width: 50px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid var(--Neutral-500);
+  position: absolute;
+  left: 50%;
+  top: 33%;
+  transform: translate(-50%, -50%);
+}
+
+.alertMessage {
+  font-size: 0.75em;
+}
+
+#file-information img {
+  width: 17px;
+
+}
+
 h1 {
   font-size: 2.4rem;
+  margin: 10px 0px 5px;
   color: var(--Neutral0);
 }
 
@@ -113,7 +167,7 @@ input {
   padding: 10px;
   border: 1px solid var(--Neutral-300);
   background-color: var(--Neutral-700);
-  border-radius: 5px;
+  border-radius: 10px;
   color: var(--Neutral-300);
   font-family: inherit;
 }
@@ -128,56 +182,31 @@ input::placeholder {
   color: var(--Neutral-500);
 }
 
-input[type="file"] {
-  display: none;
-}
-
-#file-information {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#container-input-file {
-  position: relative;
-  height: 150px;
-  border: 2px solid var(--Neutral-300);
-  background-color: var(--Neutral-700);
-  border-radius: 5px;
-  border-style: dashed;
-}
-
-#icon-upload {
-  background-color: var(--Neutral-900);
-  width: 50px;
-  padding: 5px;
-  border-radius: 20px;
-  border: 1px solid var(--Neutral-500);
-  position: absolute;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-}
-
-#file-information p {
-  font-size: 0.8em;  
-}
-
-#file-information img {
-  width: 20px;
-}
-
 input[type="submit"] {
   background-color: var(--Orange-500);
   color: var(--Neutral-900);
-  font-weight: bold;
+  font-weight: bolder;
   padding: 10px 0px;
   margin-top: 5px;
   border: 1px solid var(--Neutral-900);
-  transition: all .2s ease;
+  transition: all 0.1s ease;
+  font-size: 0.94em;
 }
 
 input[type="submit"]:hover {
   background-color: var(--Orange-700);
   border-style: inset;
-} 
+  border: none;
+  border-bottom: 3px solid var(--Gradient1);
+}
+
+input[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+.errorInput {
+  border: 1px solid var(--Orange-500);
+}
+.errorMessage {
+  color: var(--Orange-500);
+}
