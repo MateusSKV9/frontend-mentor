@@ -48,12 +48,12 @@
 
             <div id="file-information">
               <img src="assets/images/icon-info.svg" alt="icon-info" />
-              <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+              <p id="message-info" class="alertMessage">Upload your photo (JPG or PNG, max size: 500KB).</p>
             </div>
           </div>
           <div>
             <label for="iFullName">Full Name</label>
-            <input type="text" name="iFullName" id="iFullName" />
+            <input type="text" name="iFullName" id="iFullName" required />
           </div>
           <div>
             <label for="iEmail">Email Address</label>
@@ -63,6 +63,7 @@
               id="iEmail"
               placeholder="example@email.com"
             />
+            <p id="errorEmail" class="alertMessage" hidden>Please enter a valid email address</p>
           </div>
           <div>
             <label for="iGitHubUser">GitHub Username</label>
@@ -71,6 +72,7 @@
               name="iGitHubUser"
               id="iGitHubUser"
               placeholder="@yourusername"
+              required
             />
           </div>
           <input type="submit" value="Generate My Ticket" />
