@@ -22,19 +22,26 @@
 
 #ticket-logo {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 13px;
+  left: 13px;
+}
+
+#container-information-ticket {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  position: absolute;
+  bottom: 15px;
+  left: 13px;
 }
 
 #ticket-image {
   width: 100%;
 }
 
-#ticket h4, #ticket p {
+#ticket-date {
   position: absolute;
-}
-
-#ticket p {
   top: 45px;
   left: 58px;
   font-size: 0.9em;
@@ -45,4 +52,47 @@
   background: linear-gradient(to right, var(--Gradient1), var(--Gradient2)); /* Gradiente */
   -webkit-background-clip: text; /* Define o gradiente como "recorte" do texto */
   -webkit-text-fill-color: transparent; /* Remove a cor sólida do texto */
+}
+
+#image-profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 7px;
+}
+
+#name-profile {
+  color: var(--Neutral-00);
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+#container-github{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  gap: 5px;
+}
+
+#github-profile {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+#user-github {
+  font-size: 0.8em;
+}
+
+#ticket-number {
+  color: var(--Neutral-500);
+  font-size: 1.15em;
+  position: absolute;
+  top: 48%;
+  right: 10px;
+  transform: rotate(90deg);
 }

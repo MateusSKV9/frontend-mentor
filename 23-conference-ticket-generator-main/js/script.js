@@ -41,7 +41,7 @@ inputFile.addEventListener("change", (event) => {
   }
 });
 
-// Função para exibir a imagem no contêiner
+// Função para exibir a imagem no contêiner e salvar no localStorage
 function handleFile(file) {
   if (file.type.startsWith("image/")) {
     const reader = new FileReader();
@@ -65,6 +65,9 @@ function handleFile(file) {
       container.appendChild(img);
       fileIsValid = true; // Arquivo válido foi adicionado
       divInfo.classList.remove("errorMessage"); // Remove erro
+
+      // Salva a URL da imagem no localStorage
+      localStorage.setItem("imageUrl", e.target.result); // Salva no localStorage
     };
 
     reader.readAsDataURL(file); // Converte o arquivo para uma URL base64

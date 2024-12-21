@@ -5,7 +5,8 @@
 :root {
   --Neutral0: hsl(0, 0%, 100%);
   --Neutral-300: hsl(252, 6%, 83%);
-  --Neutral-500: hsl(245, 15%, 58%);
+  --Neutral-500: hsl(247, 18%, 62%);
+  --Neutral-600: hsla(245, 19%, 35%, 0.75);
   --Neutral-700: hsla(245, 19%, 35%, 0.5);
   --Neutral-900: hsl(248, 70%, 10%);
 
@@ -38,16 +39,18 @@ body {
     url("../assets/images/pattern-squiggly-line-bottom.svg"),
     url("../assets/images/pattern-squiggly-line-top.svg"),
     url("../assets/images/pattern-circle.svg"),
+    url("../assets/images/pattern-circle.svg"),
     url("../assets/images/background-desktop.png");
   background-position: 
     top center,
     bottom left,
     top right,
-    1000px center,
+    69% 65%,
+    200px -10%,
     center center;
   background-repeat: no-repeat;
   background-size: 
-    cover, auto, auto, auto, cover;
+    cover, auto, auto, 150px, 150px, cover;
 }
 
 main {
@@ -132,11 +135,17 @@ input[type="file"] {
 #container-input-file {
   position: relative;
   height: 130px;
-  border: 1px solid var(--Neutral-300);
+  border: 1px solid var(--Neutral-500);
   background-color: var(--Neutral-700);
   border-radius: 5px;
   border-style: dashed;
   border-radius: 10px;
+  transition: background-color .2s ease;
+}
+
+#container-input-file:hover {
+  cursor: pointer;
+  background-color: var(--Neutral-600);
 }
 
 #icon-upload {
@@ -168,17 +177,20 @@ h1 {
 
 input {
   padding: 10px;
-  border: 1px solid var(--Neutral-300);
+  border: 1px solid var(--Neutral-500);
   background-color: var(--Neutral-700);
   border-radius: 10px;
   color: var(--Neutral-300);
   font-family: inherit;
+  transition: background-color .3s ease;
+}
+
+input:hover {
+  background-color: var(--Neutral-600);
 }
 
 input:focus {
-  border: 3px solid var(--Neutral-300);
-  border-radius: 10px;
-  border-style: double;
+  border: 3px double var(--Neutral-500);
 }
 
 input::placeholder {
@@ -197,6 +209,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+  cursor: pointer;
   background-color: var(--Orange-700);
   border-style: inset;
   border: none;
