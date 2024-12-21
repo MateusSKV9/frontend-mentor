@@ -24,7 +24,7 @@
   <body>
     <main>
       <section id="container-form">
-        <div id="logo">
+        <div id="logo-form">
           <img src="assets/images/logo-full.svg" alt="logo-full" />
         </div>
         <h1>
@@ -32,23 +32,26 @@
           2025 Starts Here!
         </h1>
         <p>Secure your spot at next year's biggest coding conference.</p>
-        <form action="#">
+        <form action="ticket-page.html" method="get">
           <div id="container-fl">
             <label for="iAvatar" id="label-upload">Upload Avatar</label>
             <div id="container-input-file">
-              <img id="icon-upload" src="assets/images/icon-upload.svg" alt="icon-upload">
-              <input
-                type="file"
-                name="iAvatar"
-                id="iAvatar"
-                placeholder="."
+              <img
+                id="icon-upload"
+                src="assets/images/icon-upload.svg"
+                alt="icon-upload"
               />
-              <span id="file-placeholder">Drag and drop or click to upload</span>
+              <input type="file" name="iAvatar" id="iAvatar" placeholder="." />
+              <span id="file-placeholder"
+                >Drag and drop or click to upload</span
+              >
             </div>
 
             <div id="file-information">
-              <img src="assets/images/icon-info.svg" alt="icon-info" />
-              <p id="message-info" class="alertMessage">Upload your photo (JPG or PNG, max size: 500KB).</p>
+              <i class="fa-solid fa-circle-info"></i>
+              <p id="message-info" class="alertMessage">
+                Upload your photo (JPG or PNG, max size: 500KB).
+              </p>
             </div>
           </div>
           <div>
@@ -63,7 +66,9 @@
               id="iEmail"
               placeholder="example@email.com"
             />
-            <p id="errorEmail" class="alertMessage" hidden>Please enter a valid email address</p>
+            <p id="errorEmail" class="alertMessage" hidden>
+              Please enter a valid email address
+            </p>
           </div>
           <div>
             <label for="iGitHubUser">GitHub Username</label>
@@ -78,25 +83,6 @@
           <input type="submit" value="Generate My Ticket" />
         </form>
       </section>
-
-      <!-- Generated tickets starts -->
-
-      <section id="container-ticket" hidden>
-        <h1>
-          Congrats,
-          <!-- Full Name -->! Your ticket is ready.
-        </h1>
-        <p>
-          We've emailed your ticket to
-          <!-- Email Address -->
-          and will send updates in the run up to the event.
-        </p>
-
-        <div id="ticket">
-          <h4>Coding Conf</h4>
-          Jan 31, 2025 / Austin, TX
-        </div>
-      </section>
     </main>
 
     <!-- <div class="attribution">
@@ -104,6 +90,10 @@
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
 
-  <script src="js/script.js"></script>
+    <script src="js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0a1412cd70.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -2,7 +2,7 @@ const container = document.getElementById("container-input-file");
 const inputFile = document.getElementById("iAvatar");
 const iconUpload = document.getElementById("icon-upload");
 const labelUpload = document.getElementById("label-upload");
-const fileMessage = document.getElementById("message-info");
+const divInfo = document.getElementById("file-information");
 const submit = document.querySelector('input[type="submit"]');
 let fileIsValid = false; // Inicializa como falso
 
@@ -64,7 +64,7 @@ function handleFile(file) {
 
       container.appendChild(img);
       fileIsValid = true; // Arquivo válido foi adicionado
-      fileMessage.classList.remove("errorMessage"); // Remove erro
+      divInfo.classList.remove("errorMessage"); // Remove erro
     };
 
     reader.readAsDataURL(file); // Converte o arquivo para uma URL base64
@@ -98,16 +98,22 @@ function emailValidate(event) {
   }
 }
 
+function getQueryParams() {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("iFullName") || "Guest"; // Nome padrão caso vazio
+  const email = params.get("iEmail") || "No email provided";
+  return { name, email };
+}
+
+const ticketName = document.getElementById("ticket-name");
+const ticketEmail = document.getElementById("ticket-email");
+
 // Validação no envio do formulário
 submit.addEventListener("click", function (event) {
-  const fullName = document.getElementById("")
-
   emailValidate(event);
 
   if (!fileIsValid) {
-    fileMessage.classList.add("errorMessage");
+    divInfo.classList.add("errorMessage");
     event.preventDefault(); // Previne o envio do formulário
   }
-
-  
 });
