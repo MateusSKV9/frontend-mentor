@@ -1,0 +1,48 @@
+/* ----- TICKET ----- */
+#ticket-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} 
+
+#ticket-name {
+  margin: 30px;
+}
+
+#ticket-email {
+  width: 50%;
+}
+
+#ticket {
+  position: relative;
+  width: 400px;
+  margin-top: 100px;
+}
+
+#ticket-logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#ticket-image {
+  width: 100%;
+}
+
+#ticket h4, #ticket p {
+  position: absolute;
+}
+
+#ticket p {
+  top: 45px;
+  left: 58px;
+  font-size: 0.9em;
+}
+
+.gradient-text {
+  font-weight: bold; /* Estilo do texto */
+  background: linear-gradient(to right, var(--Gradient1), var(--Gradient2)); /* Gradiente */
+  -webkit-background-clip: text; /* Define o gradiente como "recorte" do texto */
+  -webkit-text-fill-color: transparent; /* Remove a cor sólida do texto */
+}
