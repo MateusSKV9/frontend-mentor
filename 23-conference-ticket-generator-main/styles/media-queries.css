@@ -1,0 +1,27 @@
+@media screen and (max-width: 500px) {
+  body {
+    padding: 25px 15px;
+    background-image: 
+    url("../assets/images/pattern-lines.svg"),
+    url("../assets/images/pattern-squiggly-line-bottom.svg"),
+    url("../assets/images/pattern-squiggly-line-top.svg"),
+    url("../assets/images/pattern-circle.svg"),
+    url("../assets/images/pattern-circle.svg"),
+    url("../assets/images/background-mobile.png");
+  background-position: 
+    top center,
+    bottom left,
+    top right,
+    120% center,
+    1% -10%,
+    center center;
+  background-repeat: no-repeat;
+  background-size: 
+    cover, contain, 150px, 150px, 150px, cover;
+  }
+
+  #message-info {
+    font-size: 0.65em;
+  }
+}
+

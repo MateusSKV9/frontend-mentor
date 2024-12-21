@@ -51,6 +51,7 @@
   font-weight: bold; /* Estilo do texto */
   background: linear-gradient(to right, var(--Gradient1), var(--Gradient2)); /* Gradiente */
   -webkit-background-clip: text; /* Define o gradiente como "recorte" do texto */
+  background-clip: text;
   -webkit-text-fill-color: transparent; /* Remove a cor sólida do texto */
 }
 
@@ -92,7 +93,7 @@
   color: var(--Neutral-500);
   font-size: 1.15em;
   position: absolute;
-  top: 48%;
+  top: 45%;
   right: 10px;
   transform: rotate(90deg);
 }

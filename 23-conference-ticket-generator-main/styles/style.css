@@ -71,7 +71,8 @@ main {
 }
 
 form {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   margin-top: 15px;
