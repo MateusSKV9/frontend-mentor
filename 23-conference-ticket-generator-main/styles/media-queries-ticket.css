@@ -34,7 +34,7 @@
     width: 150px;
   }
 
-  h1 {
+  #ticket-name {
     margin: 30px 10px;
     font-size: 1.8em;
   }
