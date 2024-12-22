@@ -1,6 +1,6 @@
 @media screen and (max-width: 1024px) {
   body {
-    padding: 25px 15px;
+    padding: 25px 0px 0px;
     background-image: url("../assets/images/pattern-lines.svg"),
       url("../assets/images/pattern-squiggly-line-bottom.svg"),
       url("../assets/images/pattern-squiggly-line-top.svg"),
