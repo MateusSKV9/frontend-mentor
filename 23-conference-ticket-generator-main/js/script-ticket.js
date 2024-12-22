@@ -11,6 +11,7 @@ const ticketEmail = document.getElementById("ticket-email");
 const usergithub = document.getElementById("user-github");
 const nameProfile = document.getElementById("name-profile");
 
+
 // Exibe informações do usuário
 if (ticketName && ticketEmail) {
   const { name, email, userGitHub } = getQueryParams();
@@ -18,7 +19,12 @@ if (ticketName && ticketEmail) {
   ticketEmail.innerHTML = `We've emailed your ticket to <span class="gradient-text">${email}</span> and will send updates in the run-up to the event.`;
 
   nameProfile.textContent = `${name}`;
-  usergithub.textContent = `${userGitHub}`;
+
+  if(userGitHub.includes("@")) {
+    usergithub.textContent = `${userGitHub}`;
+  } else {
+    usergithub.textContent = `@${userGitHub}`;
+  }
 }
 
 // Recupera a imagem do localStorage e exibe
