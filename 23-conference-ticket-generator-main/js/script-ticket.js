@@ -1,6 +1,6 @@
 function getQueryParams() {
   const params = new URLSearchParams(window.location.search);
-  const name = params.get("iFullName") || "Guest"; // Nome padrão caso vazio
+  const name = params.get("iFullName") || "Guest";
   const email = params.get("iEmail") || "No email provided";
   const userGitHub = params.get("iGitHubUser") || "No user GitHub provided";
   return { name, email, userGitHub };
@@ -26,14 +26,14 @@ const imageUrl = localStorage.getItem("imageUrl");
 
 if (imageUrl) {
   const img = document.getElementById("image-profile");
-  img.src = imageUrl;  // Define o src da imagem com a URL armazenada
+  img.src = imageUrl;
   img.classList.add("preview");
 }
 
 const ticketNumber = document.getElementById("ticket-number");
-let n1 = Math.floor((Math.random()*10));
-let n2 = Math.floor((Math.random()*10));
-let n3 = Math.floor((Math.random()*10));
-let n4 = Math.floor((Math.random()*10));
-let n5 = Math.floor((Math.random()*10));
+let n1 = Math.floor(Math.random() * 10);
+let n2 = Math.floor(Math.random() * 10);
+let n3 = Math.floor(Math.random() * 10);
+let n4 = Math.floor(Math.random() * 10);
+let n5 = Math.floor(Math.random() * 10);
 ticketNumber.textContent = `#${n1}${n2}${n3}${n4}${n5}`;

@@ -1,10 +1,40 @@
 const container = document.getElementById("container-input-file");
 const inputFile = document.getElementById("iAvatar");
 const iconUpload = document.getElementById("icon-upload");
-const labelUpload = document.getElementById("label-upload");
 const divInfo = document.getElementById("file-information");
 const submit = document.querySelector('input[type="submit"]');
-let fileIsValid = false; // Inicializa como falso
+const containerButtons = document.getElementById("container-buttons");
+let fileIsValid = false;
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedImageUrl = localStorage.getItem("imageUrl");
+  if (savedImageUrl) {
+    const img = document.createElement("img");
+    img.src = savedImageUrl;
+    img.classList.add("preview");
+
+    iconUpload.style.display = "none";
+
+    container.appendChild(img);
+    fileIsValid = true;
+  } else {
+    fileIsValid = false;
+  }
+
+  updateUIBasedOnFile();
+});
+
+function updateUIBasedOnFile() {
+  const placeholder = document.getElementById("file-placeholder");
+
+  if (fileIsValid) {
+    placeholder.style.display = "none";
+    containerButtons.style.display = "flex";
+  } else {
+    placeholder.style.display = "block";
+    containerButtons.style.display = "none";
+  }
+}
 
 // Redireciona o clique para o input file
 container.addEventListener("click", () => inputFile.click());
@@ -26,10 +56,10 @@ container.addEventListener("drop", (event) => {
   container.classList.remove("dragover");
 
   const files = event.dataTransfer.files;
-
   if (files.length > 0) {
     const file = files[0];
     handleFile(file);
+    updateUIBasedOnFile();
   }
 });
 
@@ -38,6 +68,7 @@ inputFile.addEventListener("change", (event) => {
   const file = event.target.files[0];
   if (file) {
     handleFile(file);
+    updateUIBasedOnFile();
   }
 });
 
@@ -47,35 +78,54 @@ function handleFile(file) {
     const reader = new FileReader();
 
     reader.onload = function (e) {
-      // Remove ícone e texto do contêiner
       iconUpload.style.display = "none";
-      labelUpload.style.display = "none";
 
-      // Adiciona a imagem carregada
       const img = document.createElement("img");
       img.src = e.target.result;
       img.classList.add("preview");
 
-      // Remove prévias anteriores (se houver)
       const existingPreview = container.querySelector("img.preview");
       if (existingPreview) {
         existingPreview.remove();
       }
 
       container.appendChild(img);
-      fileIsValid = true; // Arquivo válido foi adicionado
-      divInfo.classList.remove("errorMessage"); // Remove erro
+      fileIsValid = true;
 
-      // Salva a URL da imagem no localStorage
-      localStorage.setItem("imageUrl", e.target.result); // Salva no localStorage
+      divInfo.classList.remove("errorMessage");
+
+      localStorage.setItem("imageUrl", e.target.result);
+      updateUIBasedOnFile();
     };
 
-    reader.readAsDataURL(file); // Converte o arquivo para uma URL base64
+    reader.readAsDataURL(file);
   } else {
     fileIsValid = false;
-    alert("Por favor, adicione uma imagem válida!"); // Mensagem de erro
+    alert("Por favor, adicione uma imagem válida!");
   }
 }
+
+function removeImage() {
+  const existingPreview = container.querySelector("img.preview");
+  if (existingPreview) {
+    existingPreview.remove();
+  }
+
+  iconUpload.style.display = "flex";
+
+  fileIsValid = false;
+
+  inputFile.value = "";
+
+  localStorage.removeItem("imageUrl");
+}
+
+const btnRemove = document.getElementById("remove-image");
+btnRemove.addEventListener("click", (event) => {
+  event.stopPropagation();
+  removeImage();
+  updateUIBasedOnFile();
+});
 
 // Função para validar email
 function emailValidate(event) {

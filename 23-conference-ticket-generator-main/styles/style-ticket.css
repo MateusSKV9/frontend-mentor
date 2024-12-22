@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-} 
+}
 
 #ticket-name {
   margin: 30px;
@@ -49,7 +49,11 @@
 
 .gradient-text {
   font-weight: bold; /* Estilo do texto */
-  background: linear-gradient(to right, var(--Gradient1), var(--Gradient2)); /* Gradiente */
+  background: linear-gradient(
+    to right,
+    var(--Gradient1),
+    var(--Gradient2)
+  ); /* Gradiente */
   -webkit-background-clip: text; /* Define o gradiente como "recorte" do texto */
   background-clip: text;
   -webkit-text-fill-color: transparent; /* Remove a cor sólida do texto */
@@ -67,7 +71,7 @@
   font-size: 1em;
 }
 
-#container-github{
+#container-github {
   width: 60%;
   display: flex;
   flex-direction: column;

@@ -26,40 +26,35 @@
 body {
   width: 100%;
   min-height: 100vh;
-  padding: 20px 10px 0px;
+  padding: 20px 0px 0px;
   text-align: center;
   font-family: "Inconsolata", Arial, Helvetica, sans-serif;
   background-color: var(--Neutral-900);
   color: var(--Neutral-300);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-content: center;
-  background-image: 
-    url("../assets/images/pattern-lines.svg"),
+  background-image: url("../assets/images/pattern-lines.svg"),
     url("../assets/images/pattern-squiggly-line-bottom.svg"),
     url("../assets/images/pattern-squiggly-line-top.svg"),
     url("../assets/images/pattern-circle.svg"),
     url("../assets/images/pattern-circle.svg"),
     url("../assets/images/background-desktop.png");
-  background-position: 
-    top center,
-    bottom left,
-    top right,
-    69% 65%,
-    200px -10%,
+  background-position: top center, bottom left, top right, 69% 65%, 200px -10%,
     center center;
   background-repeat: no-repeat;
-  background-size: 
-    cover, auto, 300px, 150px, 150px, cover;
+  background-size: cover, auto, 300px, 150px, 150px, cover;
 }
 
 main {
-  width: 100%;
+  width: calc(100%-20px);
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 0px 10px;
 }
 
 #container-form {
@@ -117,9 +112,33 @@ label {
   font-size: 0.9em;
   position: absolute;
   text-align: center;
-  top: 80%;
+  top: 78%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: none;
+}
+
+#container-buttons {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+}
+
+.button-image {
+  font-size: 0.8em;
+  color: var(--Neutral-300);
+  padding: 3px 5px;
+  background-color: var(--Neutral-700);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#remove-image {
+  text-decoration: underline;
 }
 
 input[type="file"] {
@@ -135,18 +154,21 @@ input[type="file"] {
 
 #container-input-file {
   position: relative;
-  height: 130px;
+  height: 115px;
   border: 1px solid var(--Neutral-500);
   background-color: var(--Neutral-700);
-  border-radius: 5px;
   border-style: dashed;
   border-radius: 10px;
-  transition: background-color .2s ease;
+  transition: background-color 0.2s ease;
 }
 
 #container-input-file:hover {
   cursor: pointer;
   background-color: var(--Neutral-600);
+}
+
+#container-input-file:hover .button-image {
+  background-color: var(--Neutral-900);
 }
 
 #icon-upload {
@@ -167,7 +189,6 @@ input[type="file"] {
 
 #file-information i {
   font-size: 0.9m;
-
 }
 
 h1 {
@@ -183,7 +204,7 @@ input {
   border-radius: 10px;
   color: var(--Neutral-300);
   font-family: inherit;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
 input:hover {
@@ -196,6 +217,12 @@ input:focus {
 
 input::placeholder {
   color: var(--Neutral-500);
+}
+
+input:-webkit-autofill {
+  background-color: var(
+    --Neutral-700
+  ) !important; /* Altere para a cor de fundo desejada */
 }
 
 input[type="submit"] {
@@ -228,3 +255,51 @@ input[type="submit"]:active {
   color: var(--Orange-500);
 }
 
+a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+footer {
+  font-size: 0.85em;
+  padding: 4px 0px;
+  width: calc(100%);
+  background-color: var(--Neutral-700);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+footer a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+}
+
+footer a:hover::before {
+  width: 50%;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  right: 50%;
+}
+
+footer a:hover::after {
+  width: 50%;
+}
