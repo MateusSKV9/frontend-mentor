@@ -49,4 +49,8 @@
     top: 35px;
     left: 47px;
   }
+
+  footer {
+    flex-direction: column;
+  }
 }
