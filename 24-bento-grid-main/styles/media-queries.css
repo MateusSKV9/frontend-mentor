@@ -2,6 +2,7 @@
 
 @media screen and (max-width: 500px) {
   .dashboard {
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +20,8 @@
   }
 
   #social-media img {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
   }
 
   #social-media p {
@@ -41,7 +43,6 @@
     align-items: flex-start;
   }
 
-
   #posting-schedule img {
     width: 200px;
         display: flex;
@@ -54,6 +55,17 @@
     order: 3;
   }
 
+  #social-media-schedule img {
+    width: 100%;
+    max-width: 281px;
+    margin: 5px 0px 10px;
+  }
+
+  #social-media-schedule p {
+    font-size: 1em;
+    text-align: center;
+  }
+
   #followers {
     order: 4;
     flex-direction: column;
@@ -61,8 +73,14 @@
   
   #followers h2 {
     margin-top: 20px;
-    width: 60%;
+    width: 80%;
     text-align: center;
+  }
+
+  #followers img {
+    width: 100%;
+    width: 190px;
+    margin-bottom: 5px;
   }
 
   #audience {
@@ -72,6 +90,7 @@
   }
 
   #container-sections {
+    width: 100%;
     display: flex;
     order: 6;
     flex-direction: column;
@@ -79,17 +98,34 @@
 
   #content-quicker {
     font-size: 0.95em;
+    align-items: flex-start;
   }
 
   #content-quicker h2 {
     margin-top: 0px;
   }
 
+  #content-quicker .image {
+    justify-content: flex-start;
+  }
+
   #content-quicker img {
-    width: 200px;
+    width: 100%;
+    max-width: 150px;
   }
 
   #content-ia {
 
+  }
+
+  #content-ia .image {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #content-ia img {
+    width: 100%;
+    width: 230px;
   }
 }
