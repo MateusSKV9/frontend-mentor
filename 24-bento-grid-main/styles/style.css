@@ -21,9 +21,14 @@
 body {
   width: 100%;
   min-height: 100vh;
-  padding: 20px 30px;
+  padding: 15px 30px 0px;
   font-family: 'DM Sans', Arial, sans-serif;
   background-color: whitesmoke;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dashboard {
@@ -265,4 +270,59 @@ h2, h3 {
 #content-ia img {
   margin-left: 10px;
   width: 170px;
+}
+
+/* -------- FOOTER -------- */
+
+footer {
+  width: calc(100% + 60px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 0px;
+  color: var(--White);
+  background-color: var(--Black);
+}
+
+footer p {
+  font-size: 0.8em;
+}
+
+a {
+  position: relative;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+
+footer a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  left: 50%;
+}
+
+footer a:hover::before {
+  width: 50%;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  transition: all 0.3s ease;
+  background-color: white;
+  bottom: 0;
+  right: 50%;
+}
+
+footer a:hover::after {
+  width: 50%;
 }
