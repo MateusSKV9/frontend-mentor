@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 877px) {
   body {
     gap: 20px;
   }
@@ -9,6 +9,7 @@
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 200px) 170px;
     gap: 20px;
+    padding: 0px 5px;
   }
 
   #social-media {
@@ -83,7 +84,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 505px) {
   .dashboard {
     padding: 0;
     display: flex;
