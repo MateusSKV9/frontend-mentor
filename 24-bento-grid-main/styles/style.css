@@ -26,6 +26,7 @@ body {
   background-color: whitesmoke;
   display: flex;
   gap: 5px;
+  overflow-x: hidden;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
