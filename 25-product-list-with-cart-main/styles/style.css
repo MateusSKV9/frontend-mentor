@@ -24,4 +24,84 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: "Red Hat Text", Arial, Helvetica, sans-serif;
+  padding: 25px 45px;
+  background-color: var(--Rose-100);
+}
+
+main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+#desserts {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+  gap: 80px 30px;
+  margin-top: 12px;
+}
+
+.dessert-item {
+  display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+.image-dessert img {
+  width: 100%;
+  border-radius: 7px;
+}
+
+.add-cart {
+  border: 1px solid black;
+  border-radius: 20px;
+  display: flex;
+  width: fit-content;
+  width: -moz-fit-content;
+  padding: 5px 0px;
+  font-size: 0.85em;
+  display: flex;
+  gap: 5px;
+  background-color: white;
+  
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.add-cart img {
+  width: 20px;  
+}
+
+#container-your-cart {
+  width: 300px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+#container-your-cart h3 {
+  color: var(--Red);
+}
+
+#image-empety-cart {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#container-your-cart p {
+  font-size: 0.9em;
+  color: var(--Rose-400);
+  font-weight: 500;
+}
+
+#container-your-cart img {
+  display: block;
 }
