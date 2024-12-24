@@ -24,11 +24,13 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: "Red Hat Text", Arial, Helvetica, sans-serif;
-  padding: 25px 45px;
+  padding: 25px 45px 100px;
   background-color: var(--Rose-100);
 }
 
 main {
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -39,7 +41,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 200px);
   grid-template-rows: repeat(3, 200px);
-  gap: 80px 30px;
+  gap: 95px 30px;
   margin-top: 12px;
 }
 
@@ -55,25 +57,47 @@ main {
 }
 
 .add-cart {
-  border: 1px solid black;
+  border: 1px solid var(--Rose-500);
   border-radius: 20px;
   display: flex;
-  width: fit-content;
-  width: -moz-fit-content;
-  padding: 5px 0px;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  padding: 7px 0px;
   font-size: 0.85em;
   display: flex;
   gap: 5px;
   background-color: white;
   
+  bottom: -6px;
   position: absolute;
-  bottom: -3px;
   left: 50%;
   transform: translateX(-50%);
 }
 
+.add-cart span {
+  font-size: 0.95em;
+  color: var(--Rose-900);
+  font-weight: 650;
+}
+
 .add-cart img {
   width: 20px;  
+}
+
+h5 {
+  color: var(--Rose-900);
+}
+
+.name-dessert {
+  margin-top: 15px;
+  color: var(--Rose-400);
+  font-size: 0.95em;
+}
+
+.price-dessert {
+  color: var(--Red);
+  font-weight: 600;
 }
 
 #container-your-cart {
@@ -97,6 +121,7 @@ main {
 }
 
 #container-your-cart p {
+
   font-size: 0.9em;
   color: var(--Rose-400);
   font-weight: 500;
@@ -105,3 +130,4 @@ main {
 #container-your-cart img {
   display: block;
 }
+
