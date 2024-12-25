@@ -62,17 +62,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   width: 140px;
   padding: 7px 0px;
   font-size: 0.85em;
   display: flex;
-  gap: 5px;
   background-color: white;
   
   bottom: -6px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.add-cart:hover {
+  cursor: pointer;
 }
 
 .add-cart span {
@@ -83,6 +87,20 @@ main {
 
 .add-cart img {
   width: 20px;  
+}
+
+.off {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
 }
 
 h5 {
@@ -131,3 +149,26 @@ h5 {
   display: block;
 }
 
+.selected {
+  border: 2px solid var(--Red);
+  border-radius: 7px;
+}
+
+span.qtd-item {
+  color: white;
+}
+
+img.quantity {
+  width: 15px;
+  height: 15px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.oculto {
+  display: none;
+}
+
+.selected-background {
+  background-color: var(--Red);
+}
