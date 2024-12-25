@@ -100,7 +100,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
 
 h5 {
@@ -156,13 +156,34 @@ h5 {
 
 span.qtd-item {
   color: white;
+  width: 20px;
+  text-align: center;
 }
 
-img.quantity {
-  width: 15px;
-  height: 15px;
-  border: 1px solid white;
+i {
+  font-size: 1.1em;
+  color: white;
+  transition: all .2s ease;
+}
+
+.container-icon {
   border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  display: flex;
+  padding: 1px;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease;
+}
+
+.container-icon:hover {
+  background-color: white;
+}
+
+.container-icon:hover i {
+  color: var(--Red);
 }
 
 .oculto {
