@@ -119,7 +119,7 @@ h5 {
 }
 
 #container-your-cart {
-  width: 300px;
+  width: 350px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -192,4 +192,124 @@ i {
 
 .selected-background {
   background-color: var(--Red);
+}
+
+#confirm-order {
+  background-color: var(--Red);
+  padding: 10px 8px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 580;
+  transition: all .2s ease;
+}
+
+#confirm-order:hover {
+  cursor: pointer;
+  color: var(--Rose-100);
+}
+
+#confirm-order:active {
+  transform: scale(0.985);
+}
+
+#container-carbono {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding: 10px 8px;
+  border-radius: 7px;
+  background-color: var(--Rose-100);
+  margin: 15px 0px;
+}
+
+#container-carbono p {
+  color: var(--Rose-900);
+  font-size: 0.85em;
+}
+
+#total-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+#total {
+  color: var(--Rose-900);
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#container-list-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.item-order {
+  width: 100%;
+  border-bottom: 1px solid var(--Rose-300);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+
+.container-information-dessert {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.container-information-dessert h5 {
+  color: var(--Rose-900);
+}
+
+.information-dessert {
+  display: flex;
+  gap: 10px;
+  font-size: 0.9em;
+}
+
+.icon-remove-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--Rose-500);
+  color: var(--Rose-900);
+  border-radius: 50%;
+  padding: 1px;
+  width: 16px;
+  height: 16px;
+  transition: all .2s ease;
+}
+
+.icon-remove-item:hover {
+  border: 1px solid var(--Rose-900);
+}
+
+.icon-remove-item:hover i {
+  color: var(--Rose-900);
+}
+
+.item-order i {
+  font-size: 0.7em;
+  color: var(--Rose-500);
+}
+
+.qtd-dessert-cart {
+  font-weight: 580;
+  color: var(--Red);
+}
+
+.price-und {
+  color: var(--Rose-300);
+}
+
+.value-total-dessert {
+  font-weight: 580;
+  color: var(--Rose-500);
 }

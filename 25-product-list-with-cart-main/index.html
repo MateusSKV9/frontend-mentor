@@ -238,12 +238,58 @@
         </div>
       </section>
 
+      <!------------------------ CART ------------------------>
+
       <section id="container-your-cart">
-        <h3>Your Cart (0)</h3>
+        <h3>Your Cart (<span>0</span>)</h3>
         <div class="image-empety-cart">
           <img src="assets/images/illustration-empty-cart.svg" alt="" />
         </div>
-        <p>Your added items will appear here</p>
+        <p hidden>Your added items will appear here</p>
+        
+        <div id="container-list-order">
+          <div class="item-order">
+            <div class="container-information-dessert">
+              <h5>Nome pedido</h5>
+
+              <div class="information-dessert">
+                <span class="qtd-dessert-cart">1x</span>
+                <span class="price-und">@$5.50</span>
+                <span class="value-total-dessert">$5.50</span>
+              </div>
+            </div>
+            <div class="icon-remove-item">
+              <i class="fa-solid fa-x"></i>
+            </div>
+          </div>
+
+          <div class="item-order">
+            <div class="container-information-dessert">
+              <h5>Nome pedido</h5>
+
+              <div class="information-dessert">
+                <span class="qtd-dessert-cart">1x</span>
+                <span class="price-und">@$5.50</span>
+                <span class="value-total-dessert">$5.50</span>
+              </div>
+            </div>
+            <div>
+              <img src="assets/images/icon-remove-item.svg" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div id="total-order">
+          <p>Order total</p>
+          <span id="total">$46.50</span>
+        </div>
+
+        <div id="container-carbono">
+          <img src="assets/images/icon-carbon-neutral.svg" alt="">
+          <p>This is a Carbon-neutral delivery</p>
+        </div>
+
+        <button id="confirm-order" type="button">Confirm Order</button>
       </section>
     </main>
 
