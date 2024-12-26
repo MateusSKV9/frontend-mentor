@@ -22,31 +22,32 @@ Array.from(btnsAddCart).forEach((btnAddCart, indice) => {
     if (!ons[indice].classList.contains("oculto")) {
       addItemTolist(indice);
     } else {
-      if (containerListOrder.querySelector(`.item${indice}`))
+      if (containerListOrder.querySelector(`.item${indice}`)) {
         containerListOrder.removeChild(
           containerListOrder.querySelector(`.item${indice}`)
         );
+        sumValues();
+      }
     }
   });
 });
 
-
 /* ---------------------> FUNÇÃO ADICIONAR ITEM A LISTA */
+
 let valorFinal = 0;
 function addItemTolist(indice) {
   if (containerListOrder.querySelector(`.item${indice}`)) {
     let item = containerListOrder.querySelector(`.item${indice}`);
     item.querySelector(".qtd-dessert-cart").textContent = `${counts[indice]}x`;
-    item.querySelector(".value-total-dessert").textContent = `$${
+    item.querySelector(".value-total-dessert").textContent = `$${(
       counts[indice] *
       Number(items[indice].querySelector(".price-dessert").textContent)
-    }`;
-
-    // SOMAR VALORES
-    // let valor = Number(containerListOrder.querySelector(`.item${indice}`).querySelector(".value-total-dessert").textContent.replace('$', ''));
-    // valorFinal += valor;
+    ).toFixed(2)}`;
 
     finalValue.textContent = `${valorFinal}`;
+    if (itemsListed.length >= 0) {
+      sumValues();
+    }
   } else {
     let itemOrder = document.createElement("div");
     itemOrder.classList.add("item-order", `item${indice}`);
@@ -81,10 +82,10 @@ function addItemTolist(indice) {
 
     let totalValue = document.createElement("span");
     totalValue.classList.add("value-total-dessert");
-    totalValue.textContent = `$${
+    totalValue.textContent = `$${(
       counts[indice] *
       Number(items[indice].querySelector(".price-dessert").textContent)
-    }`;
+    ).toFixed(2)}`;
     informationDessert.appendChild(totalValue);
 
     containerInfo.appendChild(informationDessert);
@@ -103,12 +104,16 @@ function addItemTolist(indice) {
       offs[indice].classList.remove("oculto");
       ons[indice].classList.toggle("oculto");
       btnsAddCart[indice].classList.remove("selected-background");
+      sumValues();
     });
 
     itemOrder.appendChild(removeIconContainer);
     containerListOrder.appendChild(itemOrder);
-  }
 
+    if (itemsListed.length >= 0) {
+      sumValues();
+    }
+  }
 }
 
 /* ---------------------> FUNÇÃO INCREMENT */
@@ -122,6 +127,7 @@ Array.from(pluss).forEach((plus, indice) => {
   });
 });
 
+/* ---------------------> FUNÇÃO DECREMENTO */
 Array.from(minuss).forEach((minus, indice) => {
   minus.addEventListener("click", function (event) {
     event.stopPropagation();
@@ -135,11 +141,20 @@ Array.from(minuss).forEach((minus, indice) => {
   });
 });
 
-const qtdTotalDessert = document.getElementById("qtd-total-dessert");
-let soma = counts.reduce(
-  (acumulador, valorAtual) => acumulador + valorAtual,
-  0
-);
-qtdTotalDessert.textContent = `${soma}`;
+/* ---------------------> FUNÇÃO SOMA TOTAL */
 
-// const itemsOrder = document.getElementsByClassName("item-order");
+const itemsListed = containerListOrder.getElementsByClassName(
+  "value-total-dessert"
+);
+
+function sumValues() {
+  let soma = 0;
+
+  Array.from(itemsListed).forEach((itemListed, indice) => {
+    let value = parseFloat(itemListed.textContent.replace("$", "").trim());
+    soma += value;
+  });
+
+  total = document.getElementById("total");
+  total.textContent = `$${soma.toFixed(2)}`;
+}
