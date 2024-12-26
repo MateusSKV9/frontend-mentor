@@ -118,6 +118,10 @@ h5 {
   font-weight: 600;
 }
 
+.price-dessert::before {
+  content: "$";
+}
+
 #container-your-cart {
   width: 350px;
   background-color: white;
