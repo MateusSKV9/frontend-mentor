@@ -191,7 +191,7 @@ i {
 }
 
 .oculto {
-  display: none;
+  display: none !important;
 }
 
 .selected-background {
@@ -316,4 +316,69 @@ i {
 .value-total-dessert {
   font-weight: 580;
   color: var(--Rose-500);
+}
+
+/*      MODAL     */
+
+
+#modal {
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.image-confirm-order img {
+  width: 35px;
+}
+
+#container-orders {
+  align-self: center;
+  background-color: var(--Rose-100);
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+
+#modal button  {
+  width: 100%;
+  background-color: var(--Red);
+  padding: 10px 8px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 580;
+  transition: all .2s ease;
+}
+
+#modal button:hover {
+  cursor: pointer;
+  color: var(--Rose-100);
+}
+
+#modal button:active {
+  transform: scale(0.985);
+}
+
+.modal-information-dessert {
+  display: flex;
+  gap: 10px;
+}
+
+#container-orders img {
+  width: 50px;
+  border-radius: 5px;
 }

@@ -51,7 +51,7 @@
 
           <div class="dessert-item">
             <div class="image-dessert">
-              <img src="assets/images/image-creme-brulee-desktop.jpg" alt="" />
+              <img src="assets/images/image-crème-brûlée-desktop.jpg" alt="" />
             </div>
 
             <span class="name-dessert">Crème Brûlée</span>
@@ -110,7 +110,7 @@
 
             <span class="name-dessert">Tiramisu</span>
             <h5>Classic Tiramisu</h5>
-            <span class="price-dessert"> 5.50</span>
+            <span class="price-dessert">5.50</span>
 
             <div class="add-cart">
               <div class="off">
@@ -162,9 +162,9 @@
               <img src="assets/images/image-meringue-desktop.jpg" alt="" />
             </div>
 
-            <span class="name-dessert"> Pie</span>
+            <span class="name-dessert">Pie</span>
             <h5>Lemon Meringue Pie</h5>
-            <span class="price-dessert"> 5.00</span>
+            <span class="price-dessert">5.00</span>
 
             <div class="add-cart">
               <div class="off">
@@ -189,9 +189,9 @@
               <img src="assets/images/image-cake-desktop.jpg" alt="" />
             </div>
 
-            <span class="name-dessert"> Cake</span>
+            <span class="name-dessert">Cake</span>
             <h5>Red Velvet Cake</h5>
-            <span class="price-dessert"> 4.50</span>
+            <span class="price-dessert">4.50</span>
 
             <div class="add-cart">
               <div class="off">
@@ -216,9 +216,9 @@
               <img src="assets/images/image-brownie-desktop.jpg" alt="" />
             </div>
 
-            <span class="name-dessert"> Brownie</span>
+            <span class="name-dessert">Brownie</span>
             <h5>Salted Caramel Brownie</h5>
-            <span class="price-dessert"> 4.50</span>
+            <span class="price-dessert">4.50</span>
 
             <div class="add-cart">
               <div class="off">
@@ -243,9 +243,9 @@
               <img src="assets/images/image-panna-cotta-desktop.jpg" alt="" />
             </div>
 
-            <span class="name-dessert"> Panna Cotta</span>
+            <span class="name-dessert">Panna Cotta</span>
             <h5>Vanilla Panna Cotta</h5>
-            <span class="price-dessert"> 6.50</span>
+            <span class="price-dessert">6.50</span>
 
             <div class="add-cart">
               <div class="off">
@@ -271,10 +271,10 @@
 
       <section id="container-your-cart">
         <h3>Your Cart (<span id="qtd-total-dessert">0</span>)</h3>
-        <div class="image-empety-cart">
+        <div id="image-empety-cart">
           <img src="assets/images/illustration-empty-cart.svg" alt="" />
         </div>
-        <p hidden>Your added items will appear here</p>
+        <p id="message-empety-cart">Your added items will appear here</p>
 
         <div id="container-list-order">
           <!-- <div class="item-order">
@@ -305,6 +305,48 @@
 
         <button id="confirm-order" type="button">Confirm Order</button>
       </section>
+
+      <dialog id="modal">
+        <div class="image-confirm-order">
+          <img src="assets/images/icon-order-confirmed.svg" alt="" />
+        </div>
+        <h2>Order Confirmed</h2>
+        <p>We hope you your food</p>
+
+        <div id="container-orders">
+
+          <!-- <div class="item-order item1" data-index="1">
+
+            <div class="modal-information-dessert">
+              <div class="modal-image-dessert">
+                <img src="assets/images/image-baklava-desktop.jpg" alt="" />
+              </div>
+
+              <div class="content-order">
+                <h5>Vanilla Bean Crème Brûlée</h5>
+                
+                <div class="information-dessert">
+                  <span class="qtd-dessert-cart">1x</span
+                  ><span class="price-und">@7.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-desert-value">
+              <span>5.50</span>
+            </div>
+
+          </div> -->
+
+
+          <!-- <div id="total-order">
+            <p>Order total</p>
+            <span id="total">$0.0</span>
+          </div> -->
+        </div>
+        
+        <button type="button">Start New Order</button>
+      </dialog>
     </main>
 
     <!-- <div class="attribution">
