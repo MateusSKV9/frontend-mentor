@@ -12,6 +12,9 @@ const finalValue = document.getElementById("total");
 
 // const itens = document.getElementsByClassName("dessert-item");
 
+const imageEmpetyCart = document.getElementById("image-empety-cart");
+const messageEmpetyCart = document.getElementById("message-empety-cart");
+
 Array.from(btnsAddCart).forEach((btnAddCart, indice) => {
   btnAddCart.addEventListener("click", function () {
     dessert[indice].classList.toggle("selected");
@@ -64,6 +67,14 @@ function addItemTolist(indice) {
         containerInfo.appendChild(dessertName);
       }
     }
+
+    let image = document.createElement("img");
+    let srcImage = items[indice]
+      .querySelector(".image-dessert img")
+      .getAttribute("src");
+    image.classList.add("oculto");
+    image.setAttribute("src", srcImage);
+    containerInfo.appendChild(image);
 
     let informationDessert = document.createElement("div");
     informationDessert.classList.add("information-dessert");
@@ -147,6 +158,8 @@ const itemsListed = containerListOrder.getElementsByClassName(
   "value-total-dessert"
 );
 
+sumValues();
+
 function sumValues() {
   let soma = 0;
 
@@ -157,4 +170,92 @@ function sumValues() {
 
   total = document.getElementById("total");
   total.textContent = `$${soma.toFixed(2)}`;
+
+  if (soma == 0.0) {
+    imageEmpetyCart.classList.remove("oculto");
+    messageEmpetyCart.hidden = false;
+  } else {
+    imageEmpetyCart.classList.add("oculto");
+    messageEmpetyCart.hidden = true;
+  }
 }
+
+/* ---------------------> FUNÇÃO CONFIRMAR PEDIDO */
+
+const btnConfirmOrder = document.getElementById("confirm-order");
+const modal = document.getElementById("modal");
+const containerOrders = document.getElementById("container-orders");
+const orders = containerListOrder.getElementsByClassName("item-order");
+
+btnConfirmOrder.addEventListener("click", function () {
+  modal.showModal();
+
+  if (containerListOrder.querySelector(".item-order")) {
+    Array.from(orders).forEach((order) => {
+      let itemOrder = document.createElement("div");
+      itemOrder.classList.add("item-order");
+      containerOrders.appendChild(itemOrder);
+
+      let modalInformationDessert = document.createElement("div");
+      modalInformationDessert.classList.add("modal-information-dessert");
+      itemOrder.appendChild(modalInformationDessert);
+
+      let modalImageDessert = document.createElement("div");
+      modalImageDessert.classList.add("modal-image-dessert");
+
+      let img = document.createElement("img");
+      img.setAttribute(
+        "src",
+        `${order.querySelector("img").getAttribute("src")}`
+      );
+
+      modalInformationDessert.appendChild(img);
+
+      let contentOrder = document.createElement("div");
+      contentOrder.classList.add("content-order");
+      modalInformationDessert.appendChild(contentOrder);
+
+      let h5 = document.createElement("h5");
+      h5.textContent = order.querySelector("h5").textContent;
+      contentOrder.appendChild(h5);
+
+      let informationDessert = document.createElement("div");
+      informationDessert.classList.add("information-dessert");
+      contentOrder.appendChild(informationDessert);
+
+      let qtdDessertCart = document.createElement("span");
+      qtdDessertCart.textContent =
+        order.querySelector(".qtd-dessert-cart").textContent;
+      informationDessert.appendChild(qtdDessertCart);
+
+      let priceUnd = document.createElement("span");
+      priceUnd.textContent = order.querySelector(".price-und").textContent;
+      informationDessert.appendChild(priceUnd);
+
+      let modalDesertValue = document.createElement("div");
+      modalDesertValue.classList.add("modal-desert-value");
+      itemOrder.appendChild(modalDesertValue);
+
+      let span = document.createElement("span");
+      span.textContent = order.querySelector(
+        ".value-total-dessert"
+      ).textContent;
+      modalDesertValue.appendChild(span);
+    });
+  }
+});
+
+// Fechar o modal
+function closeModal() {
+  modal.close();
+}
+
+// Fechar o modal ao clicar fora dele
+document.addEventListener("click", (event) => {
+  // Verifica se o modal está aberto e se o clique foi fora do conteúdo do modal
+  if (modal.open && event.target.closest("#modal")) {
+    closeModal();
+  }
+});
+
+/* ---------------------> FUNÇÃO CONFIRMAR PEDIDO */
