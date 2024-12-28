@@ -37,9 +37,14 @@ main {
   gap: 30px;
 }
 
+#container-desserts {
+  width: 100%;
+  max-width: 800px;
+}
+
 #desserts {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(auto-fit, 200px);
   grid-template-rows: repeat(3, 200px);
   gap: 95px 30px;
   margin-top: 12px;
@@ -123,7 +128,8 @@ h5 {
 }
 
 #container-your-cart {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   background-color: white;
   display: flex;
   flex-direction: column;
