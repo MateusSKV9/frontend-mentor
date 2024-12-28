@@ -212,6 +212,8 @@ const orders = containerListOrder.getElementsByClassName("item-order");
 btnConfirmOrder.addEventListener("click", function () {
   modal.showModal();
 
+  clearOrder();
+
   if (containerListOrder.querySelector(".item-order")) {
     Array.from(orders).forEach((order) => {
       let itemOrder = document.createElement("div");
@@ -280,4 +282,18 @@ document.addEventListener("click", (event) => {
   }
 });
 
-/* ---------------------> FUNÇÃO CONFIRMAR PEDIDO */
+/* --------------------->  */
+const btnStarNewOrder = document.getElementById("start-new-order");
+btnStarNewOrder.addEventListener("click", () => {
+  window.location.reload();
+});
+
+function clearOrder() {
+  if (containerOrders.querySelector(".item-order")) {
+    const orders = containerOrders.querySelectorAll(".item-order");
+
+    Array.from(orders).forEach((order) => {
+      containerOrders.removeChild(order);
+    });
+  }
+}
