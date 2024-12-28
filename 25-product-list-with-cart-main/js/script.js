@@ -175,6 +175,9 @@ function sumValues() {
   total = document.getElementById("total");
   total.textContent = `$${soma.toFixed(2)}`;
 
+  totalConfirm = document.getElementById("total-confirm");
+  totalConfirm.textContent = `$${soma.toFixed(2)}`;
+
   if (soma == 0.0) {
     imageEmpetyCart.classList.remove("oculto");
     messageEmpetyCart.hidden = false;
@@ -217,6 +220,7 @@ btnConfirmOrder.addEventListener("click", function () {
   if (containerListOrder.querySelector(".item-order")) {
     Array.from(orders).forEach((order) => {
       let itemOrder = document.createElement("div");
+
       itemOrder.classList.add("item-order");
       containerOrders.appendChild(itemOrder);
 
@@ -250,10 +254,12 @@ btnConfirmOrder.addEventListener("click", function () {
       let qtdDessertCart = document.createElement("span");
       qtdDessertCart.textContent =
         order.querySelector(".qtd-dessert-cart").textContent;
+      qtdDessertCart.classList.add("qtd-dessert-cart");
       informationDessert.appendChild(qtdDessertCart);
 
       let priceUnd = document.createElement("span");
       priceUnd.textContent = order.querySelector(".price-und").textContent;
+
       informationDessert.appendChild(priceUnd);
 
       let modalDesertValue = document.createElement("div");

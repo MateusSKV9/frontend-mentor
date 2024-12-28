@@ -233,17 +233,21 @@ i {
   font-size: 0.85em;
 }
 
-#total-order {
+.style-total {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 5px;
 }
 
-#total {
+.style-total span {
   color: var(--Rose-900);
   font-weight: bold;
   font-size: 1.5em;
+}
+
+#total-confirm {
+  font-size: 1.2em;
 }
 
 #container-list-order {
@@ -326,8 +330,8 @@ i {
   border: 1px solid black;
   border-radius: 10px;
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   width: 450px;
   background-color: white;
@@ -351,6 +355,13 @@ i {
   padding: 10px;
   border-radius: 10px;
   margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+#total-order-confirm {
+  margin-top: 10px;
+  order: 99;
 }
 
 #modal button  {
@@ -378,7 +389,19 @@ i {
   gap: 10px;
 }
 
+.modal-information-dessert span:nth-of-type(2) {
+  color: var(--Rose-500);
+}
+
+.information-dessert {
+  margin-top: 1px;
+}
+
 #container-orders img {
   width: 50px;
   border-radius: 5px;
+}
+
+.modal-desert-value span {
+  font-weight: 500;
 }
