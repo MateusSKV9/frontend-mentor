@@ -30,13 +30,13 @@ Array.from(btnsAddCart).forEach((btnAddCart, indice) => {
           containerListOrder.querySelector(`.item${indice}`)
         );
         sumValues();
+        calcQtdDessertCart();
       }
     }
   });
 });
 
 /* ---------------------> FUNÇÃO ADICIONAR ITEM A LISTA */
-
 let valorFinal = 0;
 function addItemTolist(indice) {
   if (containerListOrder.querySelector(`.item${indice}`)) {
@@ -50,6 +50,7 @@ function addItemTolist(indice) {
     finalValue.textContent = `${valorFinal}`;
     if (itemsListed.length >= 0) {
       sumValues();
+      calcQtdDessertCart();
     }
   } else {
     let itemOrder = document.createElement("div");
@@ -116,6 +117,7 @@ function addItemTolist(indice) {
       ons[indice].classList.toggle("oculto");
       btnsAddCart[indice].classList.remove("selected-background");
       sumValues();
+      calcQtdDessertCart();
     });
 
     itemOrder.appendChild(removeIconContainer);
@@ -123,6 +125,7 @@ function addItemTolist(indice) {
 
     if (itemsListed.length >= 0) {
       sumValues();
+      calcQtdDessertCart();
     }
   }
 }
@@ -159,6 +162,7 @@ const itemsListed = containerListOrder.getElementsByClassName(
 );
 
 sumValues();
+calcQtdDessertCart();
 
 function sumValues() {
   let soma = 0;
@@ -178,6 +182,24 @@ function sumValues() {
     imageEmpetyCart.classList.add("oculto");
     messageEmpetyCart.hidden = true;
   }
+}
+
+const itemsQtdCart =
+  containerListOrder.getElementsByClassName("qtd-dessert-cart");
+function calcQtdDessertCart() {
+  let qtdTotalDessertCart = 0;
+
+  if (containerListOrder.querySelector(".item-order")) {
+    Array.from(itemsQtdCart).forEach((itemQtdCart) => {
+      let value = parseFloat(itemQtdCart.textContent.replace("x", "").trim());
+      qtdTotalDessertCart += value;
+    });
+  } else {
+    qtdTotalDessertCart = 0;
+  }
+
+  let qtdTotalCart = document.getElementById("qtd-total-dessert");
+  qtdTotalCart.textContent = `${qtdTotalDessertCart}`;
 }
 
 /* ---------------------> FUNÇÃO CONFIRMAR PEDIDO */
