@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
 :root {
   --Red: hsl(14, 86%, 42%);
@@ -24,8 +24,12 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: "Red Hat Text", Arial, Helvetica, sans-serif;
-  padding: 25px 45px 100px;
+  padding: 25px 45px 0px;
   background-color: var(--Rose-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
 }
 
 main {
@@ -39,21 +43,21 @@ main {
 
 #container-desserts {
   width: 100%;
-  max-width: 680px;
+  max-width: 700px;
 }
 
 #desserts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  grid-template-rows: repeat(3, 200px);
-  gap: 95px 30px;
+  grid-template-columns: repeat(auto-fit, 210px);
+  grid-template-rows: repeat(auto, 200px);
+  gap: 30px;
   margin-top: 12px;
 }
 
 .dessert-item {
   display: flex;
-   flex-direction: column;
-   position: relative;
+  flex-direction: column;
+  position: relative;
 }
 
 .image-dessert img {
@@ -73,8 +77,9 @@ main {
   font-size: 0.85em;
   display: flex;
   background-color: white;
-  
-  top: 175px;
+  transition: all .15s ease;
+
+  top: 182px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -82,16 +87,22 @@ main {
 
 .add-cart:hover {
   cursor: pointer;
+  border: 1px solid var(--Red);
 }
 
 .add-cart span {
   font-size: 0.95em;
   color: var(--Rose-900);
   font-weight: 650;
+  transition: all .15s ease;
+}
+
+.add-cart:hover .off span {
+  color: var(--Red);
 }
 
 .add-cart img {
-  width: 20px;  
+  width: 20px;
 }
 
 .off {
@@ -128,7 +139,7 @@ h5 {
 }
 
 #container-your-cart {
-  width: 100%;
+  width: 95%;
   max-width: 350px;
   background-color: white;
   display: flex;
@@ -149,7 +160,6 @@ h5 {
 }
 
 #container-your-cart p {
-
   font-size: 0.9em;
   color: var(--Rose-400);
   font-weight: 500;
@@ -173,7 +183,7 @@ span.qtd-item {
 i {
   font-size: 1.1em;
   color: white;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .container-icon {
@@ -185,7 +195,7 @@ i {
   padding: 1px;
   justify-content: center;
   align-items: center;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .container-icon:hover {
@@ -211,7 +221,8 @@ i {
   border-radius: 20px;
   color: white;
   font-weight: 580;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
+  font-size: 0.87em;
 }
 
 #confirm-order:hover {
@@ -298,7 +309,7 @@ i {
   padding: 1px;
   width: 16px;
   height: 16px;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 .icon-remove-item:hover {
@@ -329,7 +340,6 @@ i {
 }
 
 /*      MODAL     */
-
 
 #modal {
   padding: 25px;
@@ -370,7 +380,7 @@ i {
   order: 99;
 }
 
-#modal button  {
+#modal button {
   width: 100%;
   background-color: var(--Red);
   padding: 10px 8px;
@@ -378,7 +388,7 @@ i {
   border-radius: 20px;
   color: white;
   font-weight: 580;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
 #modal button:hover {
@@ -410,4 +420,54 @@ i {
 
 .modal-desert-value span {
   font-weight: 500;
+}
+
+footer {
+  width: calc(100% + 90px);
+  margin-left: -45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 2px;
+  background-color: var(--Red);
+  color: white;
+}
+
+footer a {
+  color: white;
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.86em;
+}
+
+footer a::before {
+  background-color: white;
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  left: 50%;
+  width: 0%;
+  height: 1px;
+  transition: all .2s ease;
+}
+
+footer a:hover::before {
+  width: 50%;
+}
+
+footer a::after {
+  background-color: white;
+  position: absolute;
+  content: '';
+  bottom: 0px;
+  right: 50%;
+  width: 0%;
+  height: 1px;
+  transition: all .2s ease;
+}
+
+footer a:hover::after {
+  width: 50%;
 }
