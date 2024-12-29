@@ -1,5 +1,5 @@
-const btnsAddCart = document.getElementsByClassName("add-cart");
-const dessert = document.querySelectorAll(".image-dessert img");
+let btnsAddCart = document.getElementsByClassName("add-cart");
+let dessert = document.querySelectorAll(".image-dessert img");
 let offs = document.querySelectorAll(".add-cart .off");
 let ons = document.querySelectorAll(".add-cart .on");
 const pluss = document.getElementsByClassName("fa-plus");
@@ -94,10 +94,10 @@ fetch("./data.json")
 
 let counts = undefined;
 function addEventListeners() {
-  const btnsAddCart = document.getElementsByClassName("add-cart");
-  const offs = document.querySelectorAll(".add-cart .off");
-  const ons = document.querySelectorAll(".add-cart .on");
-  const dessert = document.querySelectorAll(".image-dessert img");
+  btnsAddCart = document.getElementsByClassName("add-cart");
+  offs = document.querySelectorAll(".add-cart .off");
+  ons = document.querySelectorAll(".add-cart .on");
+  dessert = document.querySelectorAll(".image-dessert img");
 
   Array.from(btnsAddCart).forEach((btnAddCart, indice) => {
     btnAddCart.addEventListener("click", function () {
