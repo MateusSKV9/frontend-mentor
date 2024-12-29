@@ -1,44 +1,132 @@
 const btnsAddCart = document.getElementsByClassName("add-cart");
 const dessert = document.querySelectorAll(".image-dessert img");
-const offs = document.querySelectorAll(".add-cart .off");
-const ons = document.querySelectorAll(".add-cart .on");
+let offs = document.querySelectorAll(".add-cart .off");
+let ons = document.querySelectorAll(".add-cart .on");
 const pluss = document.getElementsByClassName("fa-plus");
 const minuss = document.getElementsByClassName("fa-minus");
 const qtdItems = document.getElementsByClassName("qtd-item");
-const counts = Array(btnsAddCart.length).fill(1);
+
 const containerListOrder = document.getElementById("container-list-order");
-const items = document.getElementsByClassName("dessert-item");
+let items = undefined;
 const finalValue = document.getElementById("total");
 
 // const itens = document.getElementsByClassName("dessert-item");
 
 const imageEmpetyCart = document.getElementById("image-empety-cart");
 const messageEmpetyCart = document.getElementById("message-empety-cart");
+const desserts = document.getElementById("desserts");
 
-Array.from(btnsAddCart).forEach((btnAddCart, indice) => {
-  btnAddCart.addEventListener("click", function () {
-    dessert[indice].classList.toggle("selected");
-    btnAddCart.classList.toggle("selected-background");
-    offs[indice].classList.toggle("oculto");
-    ons[indice].classList.toggle("oculto");
+// Função para renderizar os itens
+function renderDesserts(data) {
+  data.forEach((dessert) => {
+    // Criar o elemento do item
+    const dessertItem = document.createElement("div");
+    dessertItem.classList.add("dessert-item");
 
-    if (!ons[indice].classList.contains("oculto")) {
-      addItemTolist(indice);
-    } else {
-      if (containerListOrder.querySelector(`.item${indice}`)) {
-        containerListOrder.removeChild(
-          containerListOrder.querySelector(`.item${indice}`)
-        );
-        sumValues();
-        calcQtdDessertCart();
-      }
-    }
+    // Inserir a estrutura HTML no item
+    dessertItem.innerHTML = `
+      <div class="image-dessert">
+        <img src="${dessert.image.desktop}" alt="${dessert.name}" />
+      </div>
+      <span class="name-dessert">${dessert.category}</span>
+      <h5>${dessert.name}</h5>
+      <span class="price-dessert">${dessert.price.toFixed(2)}</span>
+      <div class="add-cart">
+        <div class="off">
+          <img src="assets/images/icon-add-to-cart.svg" alt="Add to Cart" />
+          <span>Add to Cart</span>
+        </div>
+        <div class="on oculto">
+          <div class="container-icon">
+            <i class="fa-solid fa-minus"></i>
+          </div>
+          <span class="qtd-item">1</span>
+          <div class="container-icon">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Adicionar o item ao contêiner
+    desserts.appendChild(dessertItem);
   });
-});
+}
+
+// Carregar o JSON e renderizar os itens
+fetch("./data.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Erro ao carregar o JSON: ${response.statusText}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    renderDesserts(data); // Renderiza os itens
+    addEventListeners(); // Configura os eventos nos itens recém-criados
+  })
+  .catch((error) => {
+    console.error("Erro:", error);
+  });
+
+// PAROU DE FUNCIONAR
+let counts = undefined;
+function addEventListeners() {
+  const btnsAddCart = document.getElementsByClassName("add-cart");
+  const offs = document.querySelectorAll(".add-cart .off");
+  const ons = document.querySelectorAll(".add-cart .on");
+  const dessert = document.querySelectorAll(".image-dessert img");
+
+  Array.from(btnsAddCart).forEach((btnAddCart, indice) => {
+    btnAddCart.addEventListener("click", function () {
+      dessert[indice].classList.toggle("selected");
+      btnAddCart.classList.toggle("selected-background");
+      offs[indice].classList.toggle("oculto");
+      ons[indice].classList.toggle("oculto");
+
+      if (!ons[indice].classList.contains("oculto")) {
+        addItemTolist(indice, offs, ons, dessert);
+      } else {
+        if (containerListOrder.querySelector(`.item${indice}`)) {
+          containerListOrder.removeChild(
+            containerListOrder.querySelector(`.item${indice}`)
+          );
+          sumValues();
+          calcQtdDessertCart();
+        }
+      }
+    });
+  });
+
+  items = document.getElementsByClassName("dessert-item");
+  counts = Array(btnsAddCart.length).fill(1);
+  Array.from(pluss).forEach((plus, indice) => {
+    plus.addEventListener("click", function (event) {
+      event.stopPropagation();
+      counts[indice]++;
+      qtdItems[indice].textContent = counts[indice];
+      addItemTolist(indice, offs, ons, dessert);
+    });
+  });
+
+  /* ---------------------> FUNÇÃO DECREMENTO */
+  Array.from(minuss).forEach((minus, indice) => {
+    minus.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (counts[indice] > 1) {
+        counts[indice]--;
+        qtdItems[indice].textContent = counts[indice];
+        addItemTolist(indice);
+      } else {
+        alert("Não podem valores menores que zero.");
+      }
+    });
+  });
+}
 
 /* ---------------------> FUNÇÃO ADICIONAR ITEM A LISTA */
 let valorFinal = 0;
-function addItemTolist(indice) {
+function addItemTolist(indice, offs, ons, dessert) {
   if (containerListOrder.querySelector(`.item${indice}`)) {
     let item = containerListOrder.querySelector(`.item${indice}`);
     item.querySelector(".qtd-dessert-cart").textContent = `${counts[indice]}x`;
@@ -87,7 +175,7 @@ function addItemTolist(indice) {
 
     let priceUnd = document.createElement("span");
     priceUnd.classList.add("price-und");
-    priceUnd.textContent = `@${
+    priceUnd.textContent = `aaa@${
       items[indice].querySelector(".price-dessert").textContent
     }`;
     informationDessert.appendChild(priceUnd);
@@ -115,6 +203,7 @@ function addItemTolist(indice) {
       containerListOrder.removeChild(itemOrder);
       offs[indice].classList.remove("oculto");
       ons[indice].classList.toggle("oculto");
+      dessert[indice].classList.remove("selected");
       btnsAddCart[indice].classList.remove("selected-background");
       sumValues();
       calcQtdDessertCart();
@@ -130,32 +219,8 @@ function addItemTolist(indice) {
   }
 }
 
-/* ---------------------> FUNÇÃO INCREMENT */
+/* ---------------------> SOMAR VALORES E CALCULAR QUANTIDADE */
 
-Array.from(pluss).forEach((plus, indice) => {
-  plus.addEventListener("click", function (event) {
-    event.stopPropagation();
-    counts[indice]++;
-    qtdItems[indice].textContent = counts[indice];
-    addItemTolist(indice);
-  });
-});
-
-/* ---------------------> FUNÇÃO DECREMENTO */
-Array.from(minuss).forEach((minus, indice) => {
-  minus.addEventListener("click", function (event) {
-    event.stopPropagation();
-    if (counts[indice] > 1) {
-      counts[indice]--;
-      qtdItems[indice].textContent = counts[indice];
-      addItemTolist(indice);
-    } else {
-      alert("Não podem valores menores que zero.");
-    }
-  });
-});
-
-/* ---------------------> FUNÇÃO SOMA TOTAL */
 
 const itemsListed = containerListOrder.getElementsByClassName(
   "value-total-dessert"
