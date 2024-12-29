@@ -16,17 +16,37 @@ const imageEmpetyCart = document.getElementById("image-empety-cart");
 const messageEmpetyCart = document.getElementById("message-empety-cart");
 const desserts = document.getElementById("desserts");
 
-// Função para renderizar os itens
 function renderDesserts(data) {
-  data.forEach((dessert) => {
+  const desserts = document.querySelector("#desserts");
+
+  function updateImages() {
+    const isMobile = window.innerWidth <= 500;
+    document.querySelectorAll(".dessert-item").forEach((dessertItem) => {
+      const index = parseInt(dessertItem.getAttribute("data-index"), 10);
+      const dessert = data[index];
+      if (dessert) {
+        const img = dessertItem.querySelector(".image-dessert img");
+        img.setAttribute(
+          "src",
+          isMobile ? dessert.image.mobile : dessert.image.desktop
+        );
+      }
+    });
+  }
+
+  data.forEach((dessert, index) => {
     // Criar o elemento do item
     const dessertItem = document.createElement("div");
     dessertItem.classList.add("dessert-item");
+    dessertItem.setAttribute("data-index", index);
 
-    // Inserir a estrutura HTML no item
     dessertItem.innerHTML = `
       <div class="image-dessert">
-        <img src="${dessert.image.desktop}" alt="${dessert.name}" />
+        <img src="${
+          window.innerWidth <= 500
+            ? dessert.image.mobile
+            : dessert.image.desktop
+        }" alt="${dessert.name}" />
       </div>
       <span class="name-dessert">${dessert.category}</span>
       <h5>${dessert.name}</h5>
@@ -48,12 +68,15 @@ function renderDesserts(data) {
       </div>
     `;
 
-    // Adicionar o item ao contêiner
     desserts.appendChild(dessertItem);
   });
+
+  updateImages();
+
+  window.addEventListener("resize", updateImages);
 }
 
-// Carregar o JSON e renderizar os itens
+// Carregar o JSON
 fetch("./data.json")
   .then((response) => {
     if (!response.ok) {
@@ -62,14 +85,13 @@ fetch("./data.json")
     return response.json();
   })
   .then((data) => {
-    renderDesserts(data); // Renderiza os itens
+    renderDesserts(data);
     addEventListeners(); // Configura os eventos nos itens recém-criados
   })
   .catch((error) => {
     console.error("Erro:", error);
   });
 
-// PAROU DE FUNCIONAR
 let counts = undefined;
 function addEventListeners() {
   const btnsAddCart = document.getElementsByClassName("add-cart");
@@ -143,7 +165,7 @@ function addItemTolist(indice, offs, ons, dessert) {
   } else {
     let itemOrder = document.createElement("div");
     itemOrder.classList.add("item-order", `item${indice}`);
-    itemOrder.setAttribute("data-index", indice); // Atributo personalizado
+    itemOrder.setAttribute("data-index", indice);
 
     let containerInfo = document.createElement("div");
     containerInfo.classList.add("container-information-dessert");
@@ -198,7 +220,7 @@ function addItemTolist(indice, offs, ons, dessert) {
     removeIcon.classList.add("fa-solid", "fa-x");
     removeIconContainer.appendChild(removeIcon);
 
-    // Adicione o evento de remoção diretamente
+    // Remoção diretamente
     removeIconContainer.addEventListener("click", function () {
       containerListOrder.removeChild(itemOrder);
       offs[indice].classList.remove("oculto");
@@ -220,7 +242,6 @@ function addItemTolist(indice, offs, ons, dessert) {
 }
 
 /* ---------------------> SOMAR VALORES E CALCULAR QUANTIDADE */
-
 
 const itemsListed = containerListOrder.getElementsByClassName(
   "value-total-dessert"
@@ -340,14 +361,11 @@ btnConfirmOrder.addEventListener("click", function () {
   }
 });
 
-// Fechar o modal
 function closeModal() {
   modal.close();
 }
 
-// Fechar o modal ao clicar fora dele
 document.addEventListener("click", (event) => {
-  // Verifica se o modal está aberto e se o clique foi fora do conteúdo do modal
   if (modal.open && event.target.closest("#modal")) {
     closeModal();
   }
