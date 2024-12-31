@@ -15,11 +15,12 @@
   <body>
     <main>
       <div class="container">
-        <section>
-          <div>
-            <h2>Mortgage Calculator</h2>
-            <span>Clear All</span>
+        <section id="mortgage-calculator">
+          <div id="main-title">
+            <h3>Mortgage Calculator</h3>
+            <button type="button">Clear All</button>
           </div>
+          
           <div>
             <label for="iamount">Mortgage Amount</label>
             <input type="number" name="amount" id="iamount" />
@@ -44,7 +45,7 @@
           <button type="button">Calculate Repayments</button>
         </section>
 
-        <section>
+        <section class="result">
           <div id="image-result">
             <img
               src="assets/images/illustration-empty.svg"
