@@ -16,47 +16,67 @@
     <main>
       <div class="container">
         <section id="mortgage-calculator">
-          <div id="main-title">
+          <div id="container-main-title">
             <h3>Mortgage Calculator</h3>
-            <button type="button">Clear All</button>
+            <button id="clear-all" type="button">Clear All</button>
           </div>
-          
-          <div>
+
+          <div class="container-input">
             <label for="iamount">Mortgage Amount</label>
             <input type="number" name="amount" id="iamount" />
           </div>
 
-          <div>
-            <label for="iterm">Mortgage Term</label>
-            <input type="number" name="term" id="iterm" />
+          <div class="container-2columns">
+            <div class="container-input">
+              <label for="iterm">Mortgage Term</label>
+              <input type="number" name="term" id="iterm" />
+            </div>
+            <div class="container-input">
+              <label for="irate">Interest Rate</label>
+              <input type="number" name="rate" id="irate" />
+            </div>
           </div>
 
-          <div>
-            <label for="irate">Interest Rate</label>
-            <input type="number" name="rate" id="irate" />
+          <div class="container-input">
+            <label for="repayment">Mortgage Type</label>
+            <div class="container-inputs-radio">
+              <div>
+                <input type="radio" name="mortgage-type" id="repayment" />
+                <label for="repayment">Repayment</label>
+              </div>
+
+              <div>
+                <input type="radio" name="mortgage-type" id="interest-only" />
+                <label for="interest-only">Interest Only</label>
+              </div>
+            </div>
           </div>
 
-          <div>
-            <label for="itype">Mortgage Type</label>
-            <div>Repayment</div>
-            <div>Interest Only</div>
-          </div>
-
-          <button type="button">Calculate Repayments</button>
+          <button type="button" id="btn-calculate">
+            <img
+              src="assets/images/icon-calculator.svg"
+              alt="icon-calculator"
+            />
+            <span>Calculate Repayments</span>
+          </button>
         </section>
 
         <section class="result">
-          <div id="image-result">
-            <img
-              src="assets/images/illustration-empty.svg"
-              alt="illustration-empty"
-            />
+          <div>
+            <div id="image-result">
+              <img
+                src="assets/images/illustration-empty.svg"
+                alt="illustration-empty"
+              />
+            </div>
+            <h3>Results shown here</h3>
+            <p>
+              Complete the form and click “calculate repayments” to see what your
+              monthly repayments would be.
+            </p>
           </div>
-          <h3>Results shown here</h3>
-          <p>
-            Complete the form and click “calculate repayments” to see what your
-            monthly repayments would be.
-          </p>
+
+          
         </section>
       </div>
 

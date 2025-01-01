@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
 :root {
   --Lime: hsl(61, 70%, 52%);
+  --Lime-hover: hsla(61, 70%, 52%, 0.6);
   --Red: hsl(4, 69%, 50%);
 
   --White: hsl(0, 0%, 100%);
@@ -12,7 +13,6 @@
   --Slate-900: hsl(202, 55%, 16%);
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
   background-color: var(--Slate-100);
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 600px;
+  max-width: 690px;
   background-color: var(--White);
   border-radius: 10px;
   overflow: hidden;
@@ -44,32 +44,146 @@ main {
 
 .container section {
   width: 50%;
-  padding: 15px;
+  padding: 20px;
 }
 
 #mortgage-calculator {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
 }
 
-#main-title {
+#mortgage-calculator {
+  color: var(--Slate-500);
+}
+
+#container-main-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#main-title span {
+#container-main-title h3 {
+  color: var(--Slate-900);
+}
+
+#container-main-title span {
   font-size: 0.9em;
+}
+
+#clear-all {
+  color: var(--Slate-500);
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+#clear-all:hover {
+  color: var(--Slate-900);
+}
+
+.container-input {
+  width: 100%; 
+}
+
+.container-input input[type="number"] {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--Slate-500);
+  margin-top: 5px;
+  color: var(--Slate-900);
+  font-weight: bold;
+}
+
+.container-input label {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.container-2columns {
+  display: flex;
+  gap: 10px;
+}
+
+.container-inputs-radio div {
+  margin-top: 5px;
+  border: 1px solid black;
+  margin-top: 7px;
+  height: 30px;
+  padding: 0px 10px;
+  transition: all .2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+
+  border-radius: 5px;
+  border: 1px solid var(--Slate-500);
+}
+
+.container-inputs-radio div:hover {
+  border: 1px solid var(--Lime);
+
+}
+
+.container-inputs-radio div label {
+  color: var(--Slate-900);
+  font-weight: bold;
+}
+
+#btn-calculate {
+  background-color: var(--Lime);
+  border: none;
+  border-radius: 20px;
+  width: max-content;
+  padding: 10px 25px;
+  margin-top: 10px;
+  transition: all .2s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  font-weight: 600;
+  color: var(--Slate-900);
+}
+
+#btn-calculate img {
+  width: 17px;
+}
+
+#btn-calculate:hover {
+  background-color: var(--Lime-hover);
+  cursor: pointer;
 }
 
 .result {
   background-color: var(--Slate-900);
   border-bottom-left-radius: 40px;
   color: var(--White);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
 }
 
+.result img {
+  width: 140px;
+}
 
 .result p {
   color: var(--Slate-300);
