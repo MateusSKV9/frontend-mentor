@@ -1,9 +1,9 @@
 ## Frontend Mentor - Challenges
 
 
-| Status | Nº | Projeto | Demo | Código-fonte | Layout | Stack |
-| :---: | :---:  | :---:  | :---:  | :---:  | :---: | :---:     |
-| ✅ | 01 | Recipe Page | [Acessar](https://mateusskv9.github.io/frontend-mentor/01-recipe-page/) | [Acessar](./01-recipe-page/) | [Acessar](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm) | HTML e CSS |
+| Status | Nº | Projeto | Demo | Código-fonte | Layout | Stack | preview |
+| :---: | :---:  | :---:  | :---:  | :---:  | :---: | :---:     | :---: |
+| ✅ | 01 | Recipe Page | [Acessar](https://mateusskv9.github.io/frontend-mentor/01-recipe-page/) | [Acessar](./01-recipe-page/) | [Acessar](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm) | HTML e CSS | <img src="https://github.com/MateusSKV9/frontend-mentor/blob/main/01-recipe-page/preview.jpg" width="80" /> |
 | ✅ | 02 | Social Links Profile | [Acessar](https://mateusskv9.github.io/frontend-mentor/02-social-links-profile/) | [Acessar](./02-social-links-profile) | [Acessar](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ) | HTML e CSS |
 | ✅ | 03 | Blog Preview Card | [Acessar](https://mateusskv9.github.io/frontend-mentor/03-blog-preview-card/) | [Acessar](./03-blog-preview-card) | [Acessar](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ) | HTML e CSS |
 | ✅ |  04 | Faq Accordion | [Acessar](https://mateusskv9.github.io/frontend-mentor/04-faq-accordion/) | [Acessar](./04-faq-accordion) | [Acessar](https://www.frontendmentor.io/challenges/faq-accordion-UG32l9m6dQ) | HTML, CSS e JS|
