@@ -36,7 +36,9 @@ body {
 	gap: 50px;
 }
 
-main {
+
+
+#testimonials {
 	margin: 50px 30px 0px;
 	max-width: 1150px;
 	display: grid;

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 @media (max-width: 900px) {
-	main {
+	#testimonials {
 		grid-template-rows: repeat(3, auto);
 		grid-template-areas:
 			"daniel daniel daniel jeanete "
@@ -18,7 +18,7 @@
 /* Celular */
 
 @media (max-width: 600px) {
-	main {
+	#testimonials {
 		display: flex;
 		flex-direction: column;
 	}
