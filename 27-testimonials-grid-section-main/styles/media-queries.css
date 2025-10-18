@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@media (max-width: 900px) {
+	main {
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas:
+			"daniel daniel daniel jeanete "
+			"patrick patrick jonathan jonathan"
+			"kira kira kira kira";
+	}
+
+	.testimonial p:first-of-type,
+	.testimonial p:last-of-type {
+		margin-top: inherit;
+	}
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+	main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer {
+		flex-direction: column;
+	}
+}
