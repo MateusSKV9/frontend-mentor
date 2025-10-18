@@ -36,8 +36,6 @@ body {
 	gap: 50px;
 }
 
-
-
 #testimonials {
 	margin: 50px 30px 0px;
 	max-width: 1150px;
@@ -63,13 +61,13 @@ body {
 	gap: 16px;
 }
 
-.testimonial p:first-of-type {
+.testimonial > p:first-of-type {
 	font-weight: 600;
 	font-size: 1.34em;
 	z-index: 1;
 }
 
-.testimonial p:last-of-type {
+.testimonial blockquote p {
 	font-size: 0.9em;
 	color: var(--grey-100);
 	font-weight: 400;
@@ -86,6 +84,7 @@ body {
 	img {
 		border-radius: 50%;
 		width: 30px;
+    border: 2px solid var(--grey-400);
 	}
 
 	h3 {
