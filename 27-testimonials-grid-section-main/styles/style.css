@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+	--purple-50: hsl(260, 100%, 95%);
+	-purple-300: hsl(264, 82%, 80%);
+	--purple-500: hsl(263, 55%, 52%);
+
+	--white: hsl(0, 0%, 100%);
+	--grey-100: hsl(214, 17%, 92%);
+	--grey-200: hsl(0, 0%, 81%);
+	--grey-400: hsl(224, 10%, 45%);
+	--grey-500: hsl(217, 19%, 35%);
+	--dark-blue: hsl(219, 29%, 14%);
+	--black: hsl(0, 0%, 7%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Barlow Semi Condensed", Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: var(--grey-100);
+	min-height: 100vh;
+	width: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+main {
+	max-width: 1150px;
+	display: grid;
+	grid-template-areas:
+		" daniel   daniel  jonathan  kira "
+		" jeanete  patrick patrick   kira";
+
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, auto);
+	gap: 24px;
+}
+
+.testimonial {
+	background-color: var(--white);
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 10px 15px 10px var(--grey-200);
+	border: 1px solid var(--grey-200);
+
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.testimonial p:first-of-type {
+	font-weight: 600;
+	font-size: 1.3em;
+	z-index: 1;
+}
+
+.testimonial p:last-of-type {
+	font-size: 0.88em;
+	color: var(--grey-100);
+	font-weight: 400;
+}
+
+.profile-informations {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+
+	font-size: 0.8em;
+
+	img {
+		border-radius: 50%;
+		width: 30px;
+	}
+
+	h3 {
+		font-weight: 500;
+	}
+}
+
+#daniel {
+	grid-area: daniel;
+	position: relative;
+	background-color: var(--purple-500);
+	color: var(--white);
+
+	& #icon {
+		width: 108px;
+		position: absolute;
+		top: 0px;
+		right: 63px;
+		z-index: 0;
+	}
+}
+#jonathan {
+	grid-area: jonathan;
+	background-color: var(--grey-400);
+	color: var(--white);
+}
+#kira {
+	grid-area: kira;
+	background-color: var(--white);
+	color: var(--grey-500);
+
+	& p:last-of-type {
+		color: var(--grey-400);
+	}
+}
+#jeanette {
+	grid-area: jeanete;
+	color: var(--grey-500);
+
+	& p:last-of-type {
+		color: var(--grey-400);
+	}
+}
+#patrick {
+	grid-area: patrick;
+	background-color: var(--dark-blue);
+	color: var(--grey-100);
+}
