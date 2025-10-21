@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@media (max-width: 582px) {
+	body {
+		background-image: url("../images/bg-mobile.png");
+	}
+
+	#primary-container {
+		width: 100%;
+		max-width: none;
+	}
+}
