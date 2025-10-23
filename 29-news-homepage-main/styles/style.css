@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+	--soft-orange: hsl(35, 77%, 62%);
+	--soft-red: hsl(5, 85%, 63%);
+
+	--off-white: hsl(36, 100%, 99%);
+	--grayish-blue: hsl(233, 8%, 79%);
+	--dark-grayish-blue: hsl(236, 13%, 42%);
+	--very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+
+	font-family: "Inter", Arial, Helvetica, sans-serif;
+	background-color: var(--off-white);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	ul {
+		list-style: none;
+
+		display: flex;
+		gap: 16px;
+	}
+}
+
+main {
+	#main-container {
+		display: flex;
+	}
+
+	#container-cards {
+		display: flex;
+
+		.card {
+			display: flex;
+		}
+	}
+
+	aside {
+		background-color: var(--very-dark-blue);
+		color: var(--off-white);
+	}
+}
