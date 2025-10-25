@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@media (max-width: 550px) {
+	main {
+		display: flex;
+		flex-direction: column;
+
+		section {
+			#section-wrapper {
+				flex-direction: column;
+
+				h1 {
+					font-size: 2.5em;
+				}
+
+				h1,
+				div {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
