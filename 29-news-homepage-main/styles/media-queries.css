@@ -1,6 +1,72 @@
 @charset "UTF-8";
 
 @media (max-width: 550px) {
+	header {
+		#nav {
+			height: 100%;
+			width: 60%;
+			z-index: 1000;
+			right: 0;
+			top: 0;
+			transform: translateX(100%);
+			transition: all 0.15s ease-in-out;
+
+			pointer-events: none;
+			visibility: hidden;
+
+			position: fixed;
+			display: flex;
+			flex-direction: column;
+			gap: 60px;
+
+			background-color: var(--off-white);
+			padding: 30px;
+			font-size: 2em;
+
+			img {
+				width: 40px;
+			}
+
+			#btn-menu,
+			#btn-close-menu {
+				align-self: flex-end;
+			}
+
+			#btn-menu {
+				position: absolute;
+			}
+
+			ul {
+				color: var(--very-dark-blue);
+				flex-direction: column;
+				gap: 30px;
+			}
+		}
+
+		#nav.isActive {
+			visibility: visible;
+			transform: translateX(0%);
+			pointer-events: auto;
+		}
+	}
+
+	#overlay {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		visibility: hidden;
+		transition: all 0.15s ease-in-out;
+	}
+
+	#overlay.isActive {
+		opacity: 1;
+		visibility: visible;
+	}
+
 	main {
 		display: flex;
 		flex-direction: column;

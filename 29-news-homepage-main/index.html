@@ -12,8 +12,12 @@
 		<header>
 			<img src="assets/images/logo.svg" width="40" alt="Logo" />
 
-			<nav>
-				<ul>
+			<img class="hidden" id="btn-menu" src="assets/images/icon-menu.svg" alt="Ícone de menu" />
+
+			<nav id="nav">
+				<img class="hidden" id="btn-close-menu" src="assets/images/icon-menu-close.svg" alt="Ícone de menu" />
+
+				<ul id="menu">
 					<li><a href="">Home</a></li>
 					<li><a href="">New</a></li>
 					<li><a href="">Popular</a></li>
@@ -22,6 +26,8 @@
 				</ul>
 			</nav>
 		</header>
+
+		<div id="overlay"></div>
 
 		<main>
 			<section>
@@ -109,5 +115,7 @@
 				<a href="#">Mateus Santos</a>.
 			</p>
 		</footer>
+
+		<script src="scripts/script.js"></script>
 	</body>
 </html>

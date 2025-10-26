@@ -49,6 +49,10 @@ a {
 	}
 }
 
+.hidden {
+	display: none !important;
+}
+
 header {
 	width: 100%;
 	display: flex;
@@ -243,8 +247,9 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 5px;
 	gap: 8px;
+	flex-wrap: wrap;
+	padding: 5px;
 
 	a {
 		font-weight: 600;
