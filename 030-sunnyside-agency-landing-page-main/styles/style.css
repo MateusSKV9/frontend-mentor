@@ -14,4 +14,136 @@
 	--grey-550: hsl(232, 10%, 55%);
 	--grey-400: hsl(210, 4%, 67%);
 	--white: hsl(0, 100%, 100%);
+
+	--barlow: "Barlow", Arial, Helvetica, sans-serif;
+	--fraunces: "Fraunces", Arial, Helvetica, sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	font-family: var(--barlow);
+}
+
+header {
+	height: 100vh;
+	background: black url(../images/desktop/image-header.jpg) no-repeat center center/cover;
+	color: var(--white);
+	padding: 25px 35px;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		nav {
+			ul {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 30px;
+				list-style: none;
+				font-weight: 500;
+
+				& li:last-of-type {
+					color: var(--grey-950);
+					background-color: var(--white);
+					border-radius: 20px;
+					font-family: var(--fraunces);
+					font-weight: bold;
+					text-transform: uppercase;
+					font-size: 0.7em;
+					transition: all 0.15s ease-in-out;
+
+					a {
+						display: block;
+						padding: 10px 15px;
+					}
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 0.4);
+						color: var(--white);
+					}
+				}
+			}
+		}
+	}
+
+	#home {
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 110px;
+		font-family: var(--fraunces);
+		font-size: 1.85em;
+
+		h1 {
+			letter-spacing: 5px;
+			text-transform: uppercase;
+		}
+
+		img {
+			width: 28px;
+		}
+	}
+}
+
+.grid-sections {
+	display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas:
+		"section1   image1"
+		"section2   image2"
+		"secntion3  section4";
+
+	& > section {
+		padding: 50px;
+	}
+
+	.section1 {
+		grid-area: section1;
+	}
+
+	.image1 {
+		grid-area: image1;
+	}
+
+	.section2 {
+		grid-area: section2;
+	}
+
+	.image2 {
+		grid-area: image2;
+	}
+
+	.section3 {
+		grid-area: section3;
+		background: var(--white) url("../images/desktop/image-graphic-design.jpg") no-repeat center top/cover;
+	}
+
+	.section4 {
+		grid-area: section4;
+		background: var(--white) url("../images/desktop/image-photography.jpg") no-repeat center center/cover;
+	}
+
+	.image1,
+	.image2 {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 }
