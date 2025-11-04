@@ -132,7 +132,7 @@ main {
 			"section3  section4";
 
 		& > section {
-			padding: 20px;
+			padding: 10vw;
 
 			display: flex;
 			flex-direction: column;
