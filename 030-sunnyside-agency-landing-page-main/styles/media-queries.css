@@ -3,14 +3,60 @@
 @media (max-width: 730px) {
 	header {
 		background-image: url("../images/mobile/image-header.jpg");
+		padding: 20px 25px;
 
-		nav {
-			display: none;
+		.wrapper {
+			button {
+				all: unset;
+			}
+
+			nav {
+				position: fixed;
+				background-color: var(--white);
+				right: 25px;
+				top: 80px;
+				width: calc(100% - 50px);
+				padding: 30px 10px;
+				color: var(--grey-600);
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+				transition: all 0.15s ease-in-out;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: -23px;
+					right: 0px;
+					border: 12px solid var(--white);
+					border-color: transparent var(--white) var(--white) transparent;
+				}
+
+				ul {
+					flex-direction: column;
+					font-weight: 600;
+
+					& li:last-of-type {
+						background-color: var(--yellow-500);
+					}
+				}
+			}
+
+			nav.active {
+				display: flex;
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+			}
 		}
 
 		#home {
 			h1 {
 				font-size: 1.5em;
+				margin: 10px;
 			}
 		}
 	}

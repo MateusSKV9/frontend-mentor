@@ -45,7 +45,7 @@ body {
 
 header {
 	height: 100vh;
-	background: black url(../images/desktop/image-header.jpg) no-repeat center center/cover;
+	background: var(--white) url(../images/desktop/image-header.jpg) no-repeat center center/cover;
 	color: var(--white);
 	padding: 25px 35px;
 
