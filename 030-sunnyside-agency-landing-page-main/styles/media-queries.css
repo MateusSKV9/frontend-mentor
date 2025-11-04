@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+@media (max-width: 730px) {
+	header {
+		background-image: url("../images/mobile/image-header.jpg");
+
+		nav {
+			display: none;
+		}
+
+		#home {
+			h1 {
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	main {
+		.grid-sections {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(6, 1fr);
+			grid-template-areas: "image1" "section1" "image2" "section2" "section3" "section4";
+
+			& > section {
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+				padding: 30px 25px 60px;
+			}
+
+			.section3 {
+				background: var(--white) url("../images/mobile/image-graphic-design.jpg") no-repeat center top/cover;
+			}
+
+			.section4 {
+				background: var(--white) url("../images/mobile/image-photography.jpg") no-repeat center center/cover;
+			}
+		}
+
+		#testimonials-section {
+			text-align: center;
+			padding-left: 30px;
+			padding-right: 30px;
+			.container-testimonials {
+				flex-direction: column;
+			}
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+	}
+
+	footer {
+		#attribution {
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+}

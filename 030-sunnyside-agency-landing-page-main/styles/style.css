@@ -34,7 +34,7 @@ a {
 
 html {
 	scroll-behavior: smooth;
-  scroll-margin-top: 0px;
+	scroll-margin-top: 0px;
 }
 
 body {
@@ -107,6 +107,7 @@ header {
 		font-size: 1.85em;
 
 		h1 {
+			text-align: center;
 			letter-spacing: 5px;
 			text-transform: uppercase;
 		}
@@ -131,7 +132,7 @@ main {
 			"section3  section4";
 
 		& > section {
-			padding: 10vw;
+			padding: 20px;
 
 			display: flex;
 			flex-direction: column;
