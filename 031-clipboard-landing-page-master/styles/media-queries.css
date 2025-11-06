@@ -40,6 +40,11 @@
 }
 
 @media (max-width: 680px) {
+	header {
+		min-height: 80vh;
+		margin-bottom: 100px;
+	}
+
 	.wrapper {
 		flex-wrap: wrap;
 
@@ -56,7 +61,7 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-        font-size: 1.2em;
+				font-size: 1.2em;
 
 				ul {
 					justify-items: center;
