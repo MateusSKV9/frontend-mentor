@@ -35,6 +35,7 @@ body {
 	padding: 10px 20px;
 	transition: all 0.15s ease;
 	text-align: center;
+  font-weight: 600;
 
 	&:hover {
 		transform: translateY(-3px);
