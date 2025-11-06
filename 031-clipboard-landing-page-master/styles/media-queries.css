@@ -41,7 +41,7 @@
 
 @media (max-width: 680px) {
 	header {
-		min-height: 80vh;
+		height: auto;
 		margin-bottom: 100px;
 	}
 
