@@ -1,0 +1,120 @@
+:root {
+	--navy-850: hsl(217, 28%, 15%); /* intro and email sign up background */
+	--navy-900: hsl(218, 28%, 13%); /* main background */
+	--navy-950: hsl(216, 53%, 9%); /* footer background  */
+	--navy-800: hsl(219, 30%, 18%); /* testimonials background */
+
+	--teal-200: hsl(176, 68%, 64%); /* inside call-to-action gradient */
+	--cyan-500: hsl(198, 60%, 50%); /* inside call-to-action gradient */
+	--red-500: hsl(0, 100%, 63%); /* error */
+
+	--white: hsl(0, 0%, 100%);
+
+	--raleway: "Raleway", Arial, Helvetica, sans-serif;
+	--open-sans: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 15px;
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+	font-family: var(--open-sans);
+	background-color: var(--navy-900);
+	color: var(--white);
+	padding: 30px 50px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* ######## HEADER ######## */
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo {
+	width: 110px;
+
+	img {
+		width: 100%;
+	}
+}
+
+.header__list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.header__link {
+	font-size: 1.03rem;
+	transition: all 0.15s ease;
+
+	&:hover {
+		text-decoration: underline;
+		font-weight: 600;
+	}
+}
+
+/* ######## MAIN ######## */
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	max-width: 600px;
+	text-align: center;
+}
+
+.hero__image {
+	width: 600px;
+}
+
+.hero__title {
+	font-size: 2rem;
+	font-family: var(--raleway);
+}
+
+.hero__description {
+	max-width: 450px;
+}
+
+.hero__button {
+	background-image: linear-gradient(to right, var(--teal-200), var(--cyan-500));
+	padding: 12px;
+	border-radius: 20px;
+	width: 200px;
+	font-weight: 500;
+	transition: all 0.2 ease;
+
+	&:hover {
+		background-image: linear-gradient(var(--teal-200));
+	}
+}
