@@ -1,0 +1,114 @@
+:root {
+	--green-200: hsl(148, 38%, 91%);
+	--green-600: hsl(169, 82%, 27%);
+	--red: hsl(0, 66%, 54%);
+
+	--white: hsl(0, 0%, 100%);
+	--rey-500: hsl(186, 15%, 59%);
+	--grey-900: hsl(187, 24%, 22%);
+
+	--karla: "Karla", Arial, Helvetica, sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: var(--green-200);
+}
+
+body {
+	width: 100%;
+	min-height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: var(--karla);
+}
+
+input,
+textarea {
+	border: 1px solid var(--grey-900);
+	border-radius: 4px;
+	outline: none;
+
+	&:focus {
+		outline: 1px solid var(--green-600);
+	}
+}
+
+.error {
+	color: var(--red);
+	font-size: 0.9rem;
+}
+
+.error.hidden {
+	visibility: hidden;
+}
+
+.toast.hidden {
+	display: none;
+}
+
+.main {
+	background-color: var(--white);
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.form__wrapper {
+	display: flex;
+	gap: 16px;
+}
+
+.label {
+	color: var(--grey-900);
+}
+
+.input {
+	padding: 8px;
+}
+
+.submit {
+	background-color: var(--green-600);
+	color: var(--white);
+	padding: 10px;
+	border: none;
+}
+
+.toast {
+	position: absolute;
+	top: 20px;
+	background-color: var(--grey-900);
+	color: var(--white);
+	padding: 16px;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.12);
+}
+
+.toast__description {
+	color: var(--green-200);
+}
