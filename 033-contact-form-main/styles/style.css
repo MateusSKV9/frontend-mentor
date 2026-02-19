@@ -126,12 +126,11 @@ input[type="checkbox"] {
 	gap: 16px;
 
 	& > * {
-		flex-grow: 1;
+		width: 50%;
 	}
 }
 
 .radio-group {
-	flex-grow: 1;
 	display: flex;
 	gap: 8px;
 	border: 1px solid var(--grey-900);
@@ -202,5 +201,9 @@ input[type="checkbox"] {
 	.form__wrapper {
 		flex-direction: column;
 		gap: 12px;
+
+		& > * {
+			width: 100%;
+		}
 	}
 }
