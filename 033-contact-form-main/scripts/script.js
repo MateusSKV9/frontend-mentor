@@ -10,7 +10,6 @@ form.addEventListener("submit", (e) => {
 	resetErrors(errors);
 	if (timeout) clearTimeout(timeout);
 
-	console.log(inputs);
 	inputs.forEach((input) => {
 		const { name, value, type, checked } = input;
 		const error = document.querySelector(`.error.${name}`);
@@ -47,18 +46,17 @@ form.addEventListener("submit", (e) => {
 		}
 	});
 
-	showToast(isValid);
+	if (!isValid) return;
+	showToast();
 });
 
-const showToast = (isValid) => {
-	if (isValid) {
-		const toast = document.querySelector(".toast");
-		toast.classList.remove("hidden");
+const showToast = () => {
+	const toast = document.querySelector(".toast");
+	toast.classList.remove("hidden");
 
-		timeout = setTimeout(() => {
-			toast.classList.add("hidden");
-		}, 2000);
-	}
+	timeout = setTimeout(() => {
+		toast.classList.add("hidden");
+	}, 2000);
 };
 
 const resetErrors = (errors) => errors.forEach((error) => error.classList.add("hidden"));

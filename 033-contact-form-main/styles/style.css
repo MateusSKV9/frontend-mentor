@@ -30,22 +30,23 @@ body {
 	align-items: center;
 
 	font-family: var(--karla);
+	padding: 50px 16px;
 }
 
-input,
-textarea {
-	border: 1px solid var(--grey-900);
-	border-radius: 4px;
-	outline: none;
-
-	&:focus {
-		outline: 1px solid var(--green-600);
-	}
+.main {
+	background-color: var(--white);
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-radius: 8px;
+	max-width: 450px;
+	width: 100%;
 }
 
 .error {
 	color: var(--red);
-	font-size: 0.9rem;
+	font-size: 0.8rem;
 }
 
 .error.hidden {
@@ -56,12 +57,55 @@ textarea {
 	display: none;
 }
 
-.main {
-	background-color: var(--white);
-	padding: 24px;
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
+input,
+textarea {
+	border: 1px solid var(--grey-900);
+	border-radius: 4px;
+	outline: none;
+	padding: 8px;
+
+	&:focus {
+		outline: 1px solid var(--green-600);
+	}
+}
+
+textarea {
+	resize: none;
+	font-family: var(--karla);
+	color: var(--grey-900);
+	font-weight: 500;
+}
+
+input[type="radio"] {
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+
+	&:checked {
+		background: url("../assets/images/icon-radio-selected.svg") no-repeat center;
+	}
+}
+
+.radio-group:has(input:checked) {
+	background-color: var(--green-200);
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	width: 16px;
+	height: 16px;
+	border: 1px solid var(--grey-900);
+	border-radius: 2px;
+	background: transparent;
+
+	&:checked {
+		background: url("../assets/images/icon-checkbox-check.svg") no-repeat center;
+	}
+}
+
+.title {
+	color: var(--grey-900);
 }
 
 .form {
@@ -78,11 +122,37 @@ textarea {
 
 .form__wrapper {
 	display: flex;
+	margin-top: 4px;
 	gap: 16px;
+
+	& > * {
+		flex-grow: 1;
+	}
+}
+
+.radio-group {
+	flex-grow: 1;
+	display: flex;
+	gap: 8px;
+	border: 1px solid var(--grey-900);
+	padding: 8px 16px;
+	border-radius: 4px;
+}
+
+.radio-group > * {
+	cursor: pointer;
+}
+
+.check-group {
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 .label {
+	font-size: 0.9rem;
 	color: var(--grey-900);
+	font-weight: 500;
 }
 
 .input {
@@ -94,6 +164,17 @@ textarea {
 	color: var(--white);
 	padding: 10px;
 	border: none;
+	cursor: pointer;
+	transition: all 0.15s ease;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0px 3px 3px var(--green-200);
+	}
+
+	&:active {
+		transform: translateY(2px) scale(0.99);
+	}
 }
 
 .toast {
@@ -111,4 +192,15 @@ textarea {
 
 .toast__description {
 	color: var(--green-200);
+}
+
+@media screen and (max-width: 600px) {
+	.form-group {
+		gap: 4px;
+	}
+
+	.form__wrapper {
+		flex-direction: column;
+		gap: 12px;
+	}
 }
